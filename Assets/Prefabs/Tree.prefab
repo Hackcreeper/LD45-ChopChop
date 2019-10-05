@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 1.5
-  ownRigidBody: {fileID: 0}
+  ownRigidBody: {fileID: 3182645140629145946}
   stickPrefab: {fileID: 5375143044276881497, guid: b64e8ae51aacc4e0b99e16d3668016e7,
     type: 3}
 --- !u!65 &5322493733031104479
