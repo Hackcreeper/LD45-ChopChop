@@ -7,6 +7,7 @@ public class Drone : Interactable
     
     private Transform _target;
     private Transform _transform;
+    private float _attackTimer = 1f;
 
     private void Start()
     {
@@ -21,8 +22,27 @@ public class Drone : Interactable
             return;
         }
 
-        var lastFrame = _transform.rotation;
+        RotateAndMove();
+        Attack();
+    }
+
+    private void Attack()
+    {
+        _attackTimer -= Time.deltaTime;
         
+        if (Vector3.Distance(_transform.position, _target.position) > 4f || _attackTimer > 0)
+        {
+            return;
+        }
+
+        _attackTimer = 1f;
+        _target.GetComponent<Health>().Sub(1);
+    }
+
+    private void RotateAndMove()
+    {
+        var lastFrame = _transform.rotation;
+
         _transform.LookAt(_target);
         var original = _transform.rotation.eulerAngles;
         var euler = Quaternion.Euler(0, original.y, 0);
