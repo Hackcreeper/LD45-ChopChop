@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Serialization;
-
-public class Collectable : MonoBehaviour
+﻿public class Collectable : Interactable
 {
     public ResourceType type;
 

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Resources : MonoBehaviour
@@ -31,8 +30,8 @@ public class Resources : MonoBehaviour
 
 public enum ResourceType
 {
-    WOOD,
-    STONE,
-    BLOOD,
-    BONE
+    Wood,
+    Stone,
+    Blood,
+    Bone
 }
