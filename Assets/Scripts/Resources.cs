@@ -32,6 +32,6 @@ public enum ResourceType
 {
     Wood,
     Stone,
-    Blood,
+    Oil,
     Bone
 }

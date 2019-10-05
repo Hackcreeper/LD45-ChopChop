@@ -1,14 +1,21 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance { private set; get; }
     public float speed = 10.0f;
 
     private Rigidbody _rigidbody;
     private Transform _transform;
 
     public LayerMask terrainLayer;
-    
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
