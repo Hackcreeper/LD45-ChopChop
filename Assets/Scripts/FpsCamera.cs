@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UI;
 using UnityEngine;
@@ -12,10 +13,9 @@ public class FpsCamera : MonoBehaviour
     public GameObject player;
 
     private Vector2 _mouseLook;
-
     private Vector2 _smoothVector;
-
     private Transform _transform;
+    private readonly List<Interactable> _interactables = new List<Interactable>();
 
     private void Start()
     {
@@ -30,20 +30,39 @@ public class FpsCamera : MonoBehaviour
 
     private void HandleCursor()
     {
+        _interactables.ForEach(interactable => interactable.SetFocus(false));
+        _interactables.Clear();
+        
         var ray = new Ray(_transform.position, _transform.forward);
         var hits = Physics.RaycastAll(ray, 100);
+
+        if (hits.Count(CheckHit()) > 0)
+        {
+            Crosshair.Instance.SetState(CursorState.HoveringOverInteractable);
+            foreach (var hit in hits)
+            {
+                var interactable = hit.collider.GetComponent<Interactable>();
+                if (!interactable)
+                {
+                    continue;
+                }
+                
+                _interactables.Add(interactable);
+            }
+            
+            _interactables.ForEach(interactable => interactable.SetFocus(true));
+            
+            return;
+        }
         
-        var state = hits.Count(CheckHit()) > 0
-            ? CursorState.HoveringOverInteractable
-            : CursorState.Normal;
-        
-        Crosshair.Instance.SetState(state);
+        Crosshair.Instance.SetState(CursorState.Normal);
     }
 
     private static Func<RaycastHit, bool> CheckHit()
     {
         return hit => hit.collider.GetComponent<Interactable>() != null &&
-                      hit.collider.GetComponent<Interactable>().distance >= hit.distance;
+                      hit.collider.GetComponent<Interactable>().distance >= hit.distance &&
+                      hit.collider.GetComponent<Interactable>().IsActive();
     }
 
     private void HandleMovement()

@@ -2,25 +2,15 @@
 
 public class Tree : Interactable
 {
+    public Rigidbody ownRigidBody;
+    public GameObject stickPrefab;
+
     private int _health = 3;
-
-    private bool _hovering;
-
     private float _animationTimer = 1f;
-
-    private void OnMouseEnter()
-    {
-        _hovering = true;
-    }
-
-    private void OnMouseExit()
-    {
-        _hovering = false;
-    }
 
     private void Update()
     {
-        if (!_hovering || !Input.GetMouseButton(0))
+        if (!Focus || !Input.GetMouseButton(0) || !IsActive())
         {
             return;
         }
@@ -39,8 +29,19 @@ public class Tree : Interactable
         {
             return;
         }
-        
+
+        Active = false;
+        ownRigidBody.isKinematic = false;
+
+        var x = Random.Range(0, 100) <= 50 ? -2 : 2;
+        var z = Random.Range(0, 100) <= 50 ? -2 : 2;
+
+        ownRigidBody.AddForce(x, 0, z, ForceMode.VelocityChange);
+    }
+
+    public void Remove()
+    {
         Resources.Instance.Add(ResourceType.Wood, 10);
-        Destroy(gameObject);
+        Destroy(ownRigidBody.gameObject);
     }
 }
