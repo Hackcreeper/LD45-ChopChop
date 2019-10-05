@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using UI;
 using UnityEngine;
 
@@ -7,8 +8,6 @@ public class FpsCamera : MonoBehaviour
     public float sensitivity = 5f;
 
     public float smoothing = 2f;
-
-    public float interactDistance = 10f;
 
     public GameObject player;
 
@@ -32,13 +31,19 @@ public class FpsCamera : MonoBehaviour
     private void HandleCursor()
     {
         var ray = new Ray(_transform.position, _transform.forward);
-        var hits = Physics.RaycastAll(ray, interactDistance);
-
-        var state = hits.Count(hit => hit.collider.GetComponent<Interactable>() != null) > 0
+        var hits = Physics.RaycastAll(ray, 100);
+        
+        var state = hits.Count(CheckHit()) > 0
             ? CursorState.HoveringOverInteractable
             : CursorState.Normal;
         
         Crosshair.Instance.SetState(state);
+    }
+
+    private static Func<RaycastHit, bool> CheckHit()
+    {
+        return hit => hit.collider.GetComponent<Interactable>() != null &&
+                      hit.collider.GetComponent<Interactable>().distance >= hit.distance;
     }
 
     private void HandleMovement()
