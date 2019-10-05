@@ -3,8 +3,7 @@
 public class Tree : Interactable
 {
     public Rigidbody ownRigidBody;
-    public GameObject stickPrefab;
-
+    
     private int _health = 3;
     private float _animationTimer = 1f;
 

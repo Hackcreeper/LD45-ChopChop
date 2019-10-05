@@ -1,6 +1,4 @@
-﻿using System;
-using System.Security.Permissions;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Drone : Interactable
 {
