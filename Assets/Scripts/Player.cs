@@ -2,9 +2,10 @@
 
 public class Player : MonoBehaviour
 {
-    private float speed = 10.0f;
+    public float speed = 10.0f;
 
     private Rigidbody _rigidbody;
+    private Transform _transform;
 
     public LayerMask terrainLayer;
     
@@ -12,6 +13,7 @@ public class Player : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         _rigidbody = GetComponent<Rigidbody>();
+        _transform = GetComponent<Transform>();
     }
 
     private void Update()
@@ -34,9 +36,8 @@ public class Player : MonoBehaviour
 
     private bool IsGrounded()
     {
-        var ray = new Ray(transform.position, -transform.up);
-        RaycastHit hit;
+        var ray = new Ray(transform.position, -_transform.up);
 
-        return Physics.Raycast(ray, out hit, 1.6f, terrainLayer);
+        return Physics.Raycast(ray, out _, 1.6f, terrainLayer);
     }
 }

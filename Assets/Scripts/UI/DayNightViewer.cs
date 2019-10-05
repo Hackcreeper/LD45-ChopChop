@@ -1,22 +1,23 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI
 {
-    public class ResourceViewer : MonoBehaviour
+    public class DayNightViewer : MonoBehaviour
     {
-        public ResourceType type;
-
         private Text _text;
 
-        private void Start()
+        private void Awake()
         {
             _text = GetComponentInChildren<Text>();
         }
 
         private void Update()
         {
-            _text.text = Resources.Instance.Get(type).ToString();
+            _text.text = DayNight.Instance.IsDay()
+                ? "Day"
+                : "Night";
         }
     }
 }
