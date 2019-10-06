@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Base : MonoBehaviour
 {
@@ -6,11 +7,13 @@ public class Base : MonoBehaviour
 
     private BaseLevel _level = BaseLevel.None;
     private Transform _transform;
+    private Health _health;
     
     private void Awake()
     {
         Instance = this;
         _transform = transform;
+        _health = GetComponent<Health>();
     }
 
     public void SetLevel(BaseLevel level)
@@ -51,6 +54,18 @@ public class Base : MonoBehaviour
         {
             _transform.GetChild(i).gameObject.SetActive(false);
         }
+    }
+
+    private void Update()
+    {
+        if (_health.Get() > 0)
+        {
+            return;
+        }
+        
+        ScoreTransmitter.Instance.SetScore(DayNight.Instance.GetNightsSurvived());
+        ScoreTransmitter.Instance.SetReason(GameOverReason.BaseDestroyed);
+        SceneManager.LoadScene("GameOver");
     }
 }
 

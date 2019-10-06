@@ -34,15 +34,6 @@ namespace UI
                 ),
                 5 * Time.deltaTime
             );
-
-
-            var lastFrame = _rectTransform.rotation;
-
-            _rectTransform.LookAt(Player.Instance.transform);
-            var original = _rectTransform.rotation.eulerAngles;
-            var euler = Quaternion.Euler(0, original.y + 180, 0);
-
-            _rectTransform.rotation = Quaternion.Lerp(lastFrame, euler, 5 * Time.deltaTime);
         }
 
         public void ReRenderUpgrades()

@@ -15,7 +15,7 @@ public class HealthBar : MonoBehaviour
     private void Update()
     {
         _rectTransform.sizeDelta = new Vector2(
-            maxWidth/health.maxHealth*health.Get(),
+            (float)maxWidth/health.maxHealth*health.Get(),
             _rectTransform.sizeDelta.y
         );
     }
