@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
             Resources.Instance.Add(ResourceType.Wood, 10);
             Resources.Instance.Add(ResourceType.Stone, 10);
             Resources.Instance.Add(ResourceType.Oil, 10);
-            Resources.Instance.Add(ResourceType.Bone, 10);
+            Resources.Instance.Add(ResourceType.Metal, 10);
         }
         
         var vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;

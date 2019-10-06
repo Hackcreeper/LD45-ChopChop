@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -6,10 +5,16 @@ using UnityEngine.UI;
 public class GameOver : MonoBehaviour
 {
     public Text scoreText;
+    public int score;
+
+    private void Awake()
+    {
+        score = ScoreTransmitter.Instance.Get();
+    }
 
     private void Start()
     {
-        scoreText.text = $"You survived {ScoreTransmitter.Instance.Get()} nights!";
+        scoreText.text = $"You survived {score} nights!";
     }
 
     private void Update()

@@ -49,7 +49,7 @@ namespace UI
         {
             for (var i = 0; i < upgradeContainer.childCount; i++)
             {
-                Destroy(upgradeContainer.GetChild(0).gameObject);
+                Destroy(upgradeContainer.GetChild(i).gameObject);
             }
 
             foreach (var upgrade in upgrades)

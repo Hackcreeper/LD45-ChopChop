@@ -160,7 +160,7 @@ public class Drone : Interactable
         _animator.enabled = false;
         Active = false;
 
-        Resources.Instance.Add(ResourceType.Bone, Random.Range(1, 5));
+        Resources.Instance.Add(ResourceType.Metal, Random.Range(1, 5));
         Resources.Instance.Add(ResourceType.Oil, Random.Range(2, 10));
     }
 

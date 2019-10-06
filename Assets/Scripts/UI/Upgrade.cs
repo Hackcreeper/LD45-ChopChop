@@ -7,9 +7,17 @@ namespace UI
     {
         public UpgradeData data;
         public UpgradeWindow upgradeWindow;
+        
+        // Analytics
+        public UpgradeType type;
 
         public void Update()
         {
+            if (data)
+            {
+                type = data.type;
+            }
+            
             if (!Focus || !Input.GetMouseButtonDown(0) || !IsActive())
             {
                 return;
@@ -44,6 +52,12 @@ namespace UI
                 case UpgradeType.Axe:
                     Player.Instance.GainAxe();
                     break;
+                case UpgradeType.WoodenHouse:
+                    Base.Instance.SetLevel(BaseLevel.WoodenHouse);
+                    break;
+                case UpgradeType.StoneHouse:
+                    Base.Instance.SetLevel(BaseLevel.StoneHouse);
+                    break;
                 default:
                     Debug.LogError("Upgrade not implemented!");
                     break;
@@ -64,5 +78,9 @@ namespace UI
 
 public enum UpgradeType
 {
-    Axe
+    Axe,
+    WoodenHouse,
+    StoneHouse,
+    Fence,
+    Gun
 }

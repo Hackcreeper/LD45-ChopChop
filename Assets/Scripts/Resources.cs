@@ -38,5 +38,5 @@ public enum ResourceType
     Wood,
     Stone,
     Oil,
-    Bone
+    Metal
 }

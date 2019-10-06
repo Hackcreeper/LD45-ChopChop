@@ -10,16 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c4619d1ac20417bb5fa5b1ab2d766bd, type: 3}
-  m_Name: Axe
+  m_Name: Wooden House
   m_EditorClassIdentifier: 
-  displayName: Axe
-  type: 0
+  displayName: Wooden House
+  type: 1
   unlocks:
-  - {fileID: 11400000, guid: fb32db457f19949b99552129169c1556, type: 2}
-  - {fileID: 11400000, guid: 17e7af2d67d534cf98774e7bc1780b48, type: 2}
+  - {fileID: 11400000, guid: 67c5ad8d19fe84e0d8a19d394024a86e, type: 2}
   costs:
   - type: 0
-    amount: 2
-  - type: 1
-    amount: 1
-  icon: {fileID: 21300000, guid: b9261332918e5034b8a9bcea6205e87c, type: 3}
+    amount: 20
+  icon: {fileID: 21300000, guid: 119aeb9b18ad3d540bf5a329c109d107, type: 3}
