@@ -7,6 +7,7 @@ public class DayNight : MonoBehaviour
     private float _speed = 1f;
     private float _rotation;
     private bool _isDay = true;
+    private int _nightsSurvived = 0;
     
     private void Awake()
     {
@@ -45,6 +46,7 @@ public class DayNight : MonoBehaviour
     private void StartDay()
     {
         Waves.Instance.EndWave();
+        _nightsSurvived++;
     }
 
     private void StartNight()
@@ -53,4 +55,6 @@ public class DayNight : MonoBehaviour
     }
 
     public bool IsDay() => _rotation <= 180f;
+
+    public int GetNightsSurvived() => _nightsSurvived;
 }
