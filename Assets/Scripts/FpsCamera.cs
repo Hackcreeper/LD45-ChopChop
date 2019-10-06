@@ -15,15 +15,32 @@ public class FpsCamera : MonoBehaviour
     private Vector2 _mouseLook;
     private Vector2 _smoothVector;
     private Transform _transform;
+    private Player _playerInstance;
     private readonly List<Interactable> _interactables = new List<Interactable>();
-
+    private Quaternion ?_rotation = null;
+    
     private void Start()
     {
         _transform = GetComponent<Transform>();
+        _playerInstance = player.GetComponent<Player>();
     }
 
     private void Update()
     {
+        if (_playerInstance.axe.IsActive())
+        {
+            if (!_rotation.HasValue)
+            {
+                _rotation = _transform.rotation;
+            }
+
+            _transform.rotation = _rotation.Value;
+            
+            return;
+        }
+
+        _rotation = null;
+        
         HandleMovement();
         HandleCursor();
     }
@@ -42,7 +59,7 @@ public class FpsCamera : MonoBehaviour
             foreach (var hit in hits)
             {
                 var interactable = hit.collider.GetComponent<Interactable>();
-                if (!interactable)
+                if (!interactable || hit.distance > interactable.distance)
                 {
                     continue;
                 }

@@ -1,13 +1,15 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     public static Player Instance { private set; get; }
     public float speed = 10.0f;
+    public Axe axe;
 
     private Rigidbody _rigidbody;
     private Transform _transform;
+    private Health _health;
 
     public LayerMask terrainLayer;
 
@@ -18,17 +20,34 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        if (!SceneManager.GetSceneByName("Level").isLoaded)
+        {
+            SceneManager.LoadScene("Level", LoadSceneMode.Additive);
+        }
+        
         Cursor.lockState = CursorLockMode.Locked;
         _rigidbody = GetComponent<Rigidbody>();
         _transform = GetComponent<Transform>();
+        _health = GetComponent<Health>();
     }
 
     private void Update()
     {
+        if (_health.Get() <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+            return;
+        }
+
+        if (axe.IsActive())
+        {
+            return;
+        }
+
         var vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         var horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         transform.Translate(horizontal, 0, vertical);
-        
+
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             _rigidbody.AddForce(Time.deltaTime * 14000f * transform.up);

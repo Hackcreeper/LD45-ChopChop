@@ -6,6 +6,7 @@ public class DayNight : MonoBehaviour
 
     private float _speed = 1f;
     private float _rotation;
+    private bool _isDay = true;
     
     private void Awake()
     {
@@ -19,6 +20,17 @@ public class DayNight : MonoBehaviour
         {
             _rotation = 0f;
         }
+
+        if (_rotation >= 180 && _isDay)
+        {
+            Debug.Log("Night started");
+            StartNight();
+            _isDay = false;
+        } else if (_rotation <= 180 && !_isDay)
+        {
+            StartDay();
+            _isDay = true;
+        }
         
         transform.rotation = Quaternion.Euler(
             _rotation, 0, 0            
@@ -28,6 +40,16 @@ public class DayNight : MonoBehaviour
         {
             _speed = _speed > 1.1f ? 1f : 50f;
         }
+    } 
+
+    private void StartDay()
+    {
+        Waves.Instance.EndWave();
+    }
+
+    private void StartNight()
+    {
+        Waves.Instance.StartWave();
     }
 
     public bool IsDay() => _rotation <= 180f;
