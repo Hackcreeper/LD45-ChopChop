@@ -8,6 +8,7 @@ public class Drone : Interactable
     private Transform _target;
     private Transform _transform;
     private float _attackTimer = 1f;
+    private bool _running = false;
 
     private void Start()
     {
@@ -16,6 +17,17 @@ public class Drone : Interactable
 
     private void Update()
     {
+        if (_running)
+        {
+            _transform.Translate(0, speed * Time.deltaTime * 5f, 0);
+            if (Vector3.Distance(_transform.position, Player.Instance.transform.position) >= 300f)
+            {
+                Destroy(gameObject);
+            }
+            
+            return;
+        }
+        
         if (!_target)
         {
             FindTarget();
@@ -62,5 +74,11 @@ public class Drone : Interactable
         }
 
         _target = Player.Instance.transform;
+    }
+
+    public void Run()
+    {
+        GetComponent<Rigidbody>().isKinematic = true;
+        _running = true;
     }
 }

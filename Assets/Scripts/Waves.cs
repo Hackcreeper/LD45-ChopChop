@@ -33,7 +33,7 @@ public class Waves : MonoBehaviour
         {
             var spawner = SelectRandomSpawner();
 
-            _drones.Add(Instantiate(dronePrefab, spawner.transform.position, Random.rotation));
+            _drones.Add(Instantiate(dronePrefab, spawner.transform.position, Quaternion.identity));
         }
     }
 
@@ -42,7 +42,7 @@ public class Waves : MonoBehaviour
         _currentWave++;
         _droneAmount = Mathf.CeilToInt(_droneAmount * waveMultiplicator);
         
-        _drones.ForEach(Destroy);
+        _drones.ForEach(drone => drone.GetComponent<Drone>().Run());
         _drones.Clear();
     }
 
