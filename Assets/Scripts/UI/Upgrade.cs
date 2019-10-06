@@ -58,6 +58,9 @@ namespace UI
                 case UpgradeType.StoneHouse:
                     Base.Instance.SetLevel(BaseLevel.StoneHouse);
                     break;
+                case UpgradeType.Fence:
+                    Base.Instance.EnableFence();
+                    break;
                 default:
                     Debug.LogError("Upgrade not implemented!");
                     break;

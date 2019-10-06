@@ -1,19 +1,22 @@
 ﻿using System.Collections;
+using System.Linq;
+using DroneTargets;
 using UnityEngine;
 
 public class Drone : Interactable
 {
     public float speed = 5f;
-    public float searchDistance = 12f;
     public Texture redTexture;
     public MeshRenderer meshRenderer;
     public Animator spearAnimator;
 
-    private const float baseDistance = 6f;
-    private const float playerDistance = 2.4f;
+    private readonly IDroneTarget[] _targets =
+    {
+        new PlayerTarget(),
+        new FenceTarget(), 
+        new BaseTarget()
+    };
 
-    private float _attackDistance;
-    private Transform _target;
     private Transform _transform;
     private float _attackTimer = 1f;
     private bool _running;
@@ -25,6 +28,7 @@ public class Drone : Interactable
     private float _deathTimer = 2f;
     private Animator _animator;
     private Texture _originalTexture;
+    private IDroneTarget _target;
 
     private void Start()
     {
@@ -74,13 +78,19 @@ public class Drone : Interactable
         }
 
         FindTarget();
+
+        if (_target == null)
+        {
+            return;
+        }
+
         RotateAndMove();
         Attack();
     }
 
     private void Attack()
     {
-        if (Vector3.Distance(_transform.position, _target.position) > _attackDistance + 2)
+        if (Vector3.Distance(_transform.position, _target.GetTransform().position) > _target.GetAttackDistance() + 2)
         {
             return;
         }
@@ -106,13 +116,13 @@ public class Drone : Interactable
     {
         var lastFrame = _transform.rotation;
 
-        _transform.LookAt(_target);
+        _transform.LookAt(_target.GetTransform());
         var original = _transform.rotation.eulerAngles;
         var euler = Quaternion.Euler(0, original.y, 0);
 
         _transform.rotation = Quaternion.Lerp(lastFrame, euler, 5 * Time.deltaTime);
 
-        if (Vector3.Distance(_transform.position, _target.position) < _attackDistance)
+        if (Vector3.Distance(_transform.position, _target.GetTransform().position) < _target.GetAttackDistance())
         {
             return;
         }
@@ -122,15 +132,7 @@ public class Drone : Interactable
 
     private void FindTarget()
     {
-        if (Vector3.Distance(Player.Instance.transform.position, _transform.position) > searchDistance)
-        {
-            _target = Base.Instance.transform;
-            _attackDistance = baseDistance;
-            return;
-        }
-
-        _target = Player.Instance.transform;
-        _attackDistance = playerDistance;
+        _target = _targets.FirstOrDefault(target => target.CanAttack(this));
     }
 
     public void Run()
@@ -168,7 +170,7 @@ public class Drone : Interactable
         return base.IsActive() && Player.Instance.HasAxe();
     }
 
-    public Transform GetTarget() => _target;
+    public Transform GetTarget() => _target.GetTransform();
 
     public void ResetAttackTimer()
     {

@@ -5,9 +5,12 @@ public class Base : MonoBehaviour
 {
     public static Base Instance { private set; get; }
 
+    public GameObject healthBar;
+    
     private BaseLevel _level = BaseLevel.None;
     private Transform _transform;
     private Health _health;
+    private bool _fenceEnabled;
     
     private void Awake()
     {
@@ -19,18 +22,26 @@ public class Base : MonoBehaviour
     public void SetLevel(BaseLevel level)
     {
         _level = level;
+        RerenderBase();
+    }
 
+    public BaseLevel GetLevel() => _level;
+
+    public void RerenderBase()
+    {
         RemoveOldBase();
-        
-        switch (level)
+
+        switch (_level)
         {
             case BaseLevel.None:
                 break;
             case BaseLevel.WoodenHouse:
                 CreateWoodenHouse();
+                EnableAddons();
                 break;
             case BaseLevel.StoneHouse:
                 CreateStoneHouse();
+                EnableAddons();
                 break;
             default:
                 Debug.LogError("Level not integrated!");
@@ -56,6 +67,16 @@ public class Base : MonoBehaviour
         }
     }
 
+    private void EnableAddons()
+    {
+        healthBar.SetActive(_level > BaseLevel.None);
+
+        if (_fenceEnabled)
+        {
+            _transform.Find("Fence").gameObject.SetActive(true);
+        }
+    }
+
     private void Update()
     {
         if (_health.Get() > 0)
@@ -67,6 +88,14 @@ public class Base : MonoBehaviour
         ScoreTransmitter.Instance.SetReason(GameOverReason.BaseDestroyed);
         SceneManager.LoadScene("GameOver");
     }
+
+    public void EnableFence()
+    {
+        _fenceEnabled = true;
+        RerenderBase();
+    }
+
+    public bool IsFenceEnabled() => _fenceEnabled;
 }
 
 public enum BaseLevel
