@@ -2,7 +2,76 @@ fileFormatVersion: 2
 guid: 4f6a0f7cd91cb4b0ab5640a501db5bb4
 ModelImporter:
   serializedVersion: 26
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -4587020120680532198
+    second: wing1|wing1.001Action
+  - first:
+      74: -4731216887855840108
+    second: wing1|wing1.002Action
+  - first:
+      74: 8386502299237785627
+    second: wing1|wing1.003Action
+  - first:
+      74: 2568140185567299383
+    second: wing1|wing1Action
+  - first:
+      74: -3482288771431848455
+    second: wing1.001|wing1.001Action
+  - first:
+      74: -8042221240967997221
+    second: wing1.001|wing1.002Action
+  - first:
+      74: -4120580704843494910
+    second: wing1.001|wing1.003Action
+  - first:
+      74: -6246179643930580562
+    second: wing1.001|wing1Action
+  - first:
+      74: 2049183998955153025
+    second: wing1.002|wing1.001Action
+  - first:
+      74: -7124510927174138692
+    second: wing1.002|wing1.002Action
+  - first:
+      74: 8772804056234757868
+    second: wing1.002|wing1.003Action
+  - first:
+      74: -4453886840127114853
+    second: wing1.002|wing1Action
+  - first:
+      74: -2801396225780113430
+    second: wing1.003|wing1.001Action
+  - first:
+      74: 4921042067424528470
+    second: wing1.003|wing1.002Action
+  - first:
+      74: -8229472490921231219
+    second: wing1.003|wing1.003Action
+  - first:
+      74: -3081291617383639995
+    second: wing1.003|wing1Action
+  - first:
+      74: -2811007834294450940
+    second: wing1.001|wing1.000Action
+  - first:
+      74: -6967114800362346569
+    second: wing1.002|wing1.000Action
+  - first:
+      74: -323554617470229062
+    second: wing1.003|wing1.000Action
+  - first:
+      74: 7027135439747342486
+    second: wing1.000|wing1.000Action
+  - first:
+      74: -8569154542125662214
+    second: wing1.000|wing1.001Action
+  - first:
+      74: -7802379947698035708
+    second: wing1.000|wing1.002Action
+  - first:
+      74: -6690562249031122571
+    second: wing1.000|wing1.003Action
   externalObjects: {}
   materials:
     importMaterials: 1
