@@ -5,7 +5,10 @@ public class Tree : Interactable
     public Rigidbody ownRigidBody;
     
     private int _health = 3;
-    private float _animationTimer = 1f;
+
+    private bool _cutting = false;
+    // private float _animationTimer = 1f;
+    
 
     private void Update()
     {
@@ -14,19 +17,25 @@ public class Tree : Interactable
             return;
         }
 
-        // TODO: Use real animation
-        _animationTimer -= Time.deltaTime;
-        if (_animationTimer > 0)
+        if (!_cutting)
         {
+            Player.Instance.axe.SetActiveTree(this);
+            Player.Instance.axe.StartCutting();
+            _cutting = true;
+
             return;
         }
+    }
 
+    public bool TakeDamage()
+    {
+        Debug.Log("HITTING");
+        
         _health--;
-        _animationTimer = 1f;
 
         if (_health > 0)
         {
-            return;
+            return false;
         }
 
         Active = false;
@@ -34,10 +43,11 @@ public class Tree : Interactable
 
         var x = Random.Range(0, 100) <= 50 ? -2 : 2;
         var z = Random.Range(0, 100) <= 50 ? -2 : 2;
-
         ownRigidBody.AddForce(x, 0, z, ForceMode.VelocityChange);
-    }
 
+        return true;
+    }
+    
     public void Remove()
     {
         Resources.Instance.Add(ResourceType.Wood, 10);

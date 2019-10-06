@@ -5,6 +5,7 @@ public class Player : MonoBehaviour
 {
     public static Player Instance { private set; get; }
     public float speed = 10.0f;
+    public Axe axe;
 
     private Rigidbody _rigidbody;
     private Transform _transform;
@@ -35,6 +36,11 @@ public class Player : MonoBehaviour
         if (_health.Get() <= 0)
         {
             SceneManager.LoadScene("GameOver");
+            return;
+        }
+
+        if (axe.IsActive())
+        {
             return;
         }
 
