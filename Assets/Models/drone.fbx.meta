@@ -51,6 +51,54 @@ ModelImporter:
   - first:
       74: -3081291617383639995
     second: wing1.003|wing1Action
+  - first:
+      74: -2811007834294450940
+    second: wing1.001|wing1.000Action
+  - first:
+      74: 3104180917794594107
+    second: wing1.001|wing1.001Action.001
+  - first:
+      74: 511820730403502436
+    second: wing1.001|wing1.003Action.001
+  - first:
+      74: -6967114800362346569
+    second: wing1.002|wing1.000Action
+  - first:
+      74: 5688914002683826528
+    second: wing1.002|wing1.001Action.001
+  - first:
+      74: -4479636010242396403
+    second: wing1.002|wing1.003Action.001
+  - first:
+      74: -323554617470229062
+    second: wing1.003|wing1.000Action
+  - first:
+      74: 6339948289356487954
+    second: wing1.003|wing1.001Action.001
+  - first:
+      74: 2179580579226975757
+    second: wing1.003|wing1.003Action.001
+  - first:
+      74: 7027135439747342486
+    second: wing1.000|wing1.000Action
+  - first:
+      74: -8569154542125662214
+    second: wing1.000|wing1.001Action
+  - first:
+      74: 5104989527044919480
+    second: wing1.000|wing1.001Action.001
+  - first:
+      74: -7802379947698035708
+    second: wing1.000|wing1.002Action
+  - first:
+      74: -6690562249031122571
+    second: wing1.000|wing1.003Action
+  - first:
+      74: 3414638655431465381
+    second: wing1.000|wing1.003Action.001
+  - first:
+      74: -8547070509407746964
+    second: wing1.000|wing1Action
   externalObjects: {}
   materials:
     importMaterials: 1
