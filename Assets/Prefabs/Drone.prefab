@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3148910604614844334}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: wing1.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1456797741667905774}
   - component: {fileID: 922894290310112152}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: wing.000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4857755655626920360}
   - component: {fileID: 6546844998144764088}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: wing.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4939427332845389355}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bone 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2499830723783368710}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bone_end 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5387369998514580786}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bone_end 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -300,7 +300,7 @@ GameObject:
   - component: {fileID: 1451156021}
   - component: {fileID: 2772657579106896084}
   - component: {fileID: 7514095317309617158}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Drone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +366,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 4
   speed: 5
-  searchDistance: 12
   redTexture: {fileID: 2800000, guid: f95bbd78a9cc14f23b89fa659630fd8c, type: 3}
   meshRenderer: {fileID: 3788825194344849282}
   spearAnimator: {fileID: 4402455951135811253}
@@ -405,7 +404,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2161019122049173770}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bone_end 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +436,7 @@ GameObject:
   - component: {fileID: 4760658155539724894}
   - component: {fileID: 247991991410832984}
   - component: {fileID: 3788825194344849282}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: drone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -513,7 +512,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7240973244314940920}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bone 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -544,7 +543,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2450769316234362807}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: wing1.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,7 +574,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4662633618310481810}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: wing1.000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -606,7 +605,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1903937305300571081}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bone 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -638,7 +637,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7358666518353419835}
   - component: {fileID: 618470842263712577}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: drone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -697,7 +696,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4630619117515431622}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: wing1.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -728,7 +727,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5436198272393576201}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,7 +758,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7471316094309786078}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bone_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -790,7 +789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8320201943297268934}
   - component: {fileID: 1724703146139474793}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: wing.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -872,7 +871,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1371274411579763849}
   - component: {fileID: 7460426289457266116}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: wing.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -957,7 +956,7 @@ GameObject:
   - component: {fileID: 8831259826005730789}
   - component: {fileID: 4402455951135811253}
   - component: {fileID: 7295050314216393227}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: speare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
