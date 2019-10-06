@@ -3,15 +3,26 @@
 public class Tree : Interactable
 {
     public Rigidbody ownRigidBody;
-    
+
     private int _health = 3;
 
     private bool _cutting = false;
-    // private float _animationTimer = 1f;
+    private bool _wasActive = true;
     
-
     private void Update()
     {
+        if (IsActive() && !DayNight.Instance.IsDay())
+        {
+            Active = false;
+            _wasActive = true;
+        }
+
+        if (_wasActive && DayNight.Instance.IsDay())
+        {
+            Active = true;
+            _wasActive = false;
+        }
+        
         if (!Focus || !Input.GetMouseButton(0) || !IsActive())
         {
             return;
@@ -29,8 +40,6 @@ public class Tree : Interactable
 
     public bool TakeDamage()
     {
-        Debug.Log("HITTING");
-        
         _health--;
 
         if (_health > 0)
@@ -47,7 +56,7 @@ public class Tree : Interactable
 
         return true;
     }
-    
+
     public void Remove()
     {
         Resources.Instance.Add(ResourceType.Wood, 10);

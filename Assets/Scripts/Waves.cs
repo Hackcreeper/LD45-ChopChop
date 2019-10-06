@@ -42,7 +42,13 @@ public class Waves : MonoBehaviour
         _currentWave++;
         _droneAmount = Mathf.CeilToInt(_droneAmount * waveMultiplicator);
         
-        _drones.ForEach(drone => drone.GetComponent<Drone>().Run());
+        _drones.ForEach(drone =>
+        {
+            if (drone)
+            {
+                drone.GetComponent<Drone>().Run();
+            }
+        });
         _drones.Clear();
     }
 

@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
         _amount = maxHealth;
     }
 
-    public void Sub(int amount)
+    public void Sub(int amount = 1)
     {
         _amount -= amount;
     }

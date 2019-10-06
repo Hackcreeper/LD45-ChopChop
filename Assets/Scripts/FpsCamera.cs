@@ -17,7 +17,8 @@ public class FpsCamera : MonoBehaviour
     private Transform _transform;
     private Player _playerInstance;
     private readonly List<Interactable> _interactables = new List<Interactable>();
-
+    private Quaternion ?_rotation = null;
+    
     private void Start()
     {
         _transform = GetComponent<Transform>();
@@ -28,9 +29,17 @@ public class FpsCamera : MonoBehaviour
     {
         if (_playerInstance.axe.IsActive())
         {
-            _smoothVector = Vector2.zero;
+            if (!_rotation.HasValue)
+            {
+                _rotation = _transform.rotation;
+            }
+
+            _transform.rotation = _rotation.Value;
+            
             return;
         }
+
+        _rotation = null;
         
         HandleMovement();
         HandleCursor();

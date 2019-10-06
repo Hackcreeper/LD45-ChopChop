@@ -28,7 +28,6 @@ public class DayNight : MonoBehaviour
             _isDay = false;
         } else if (_rotation <= 180 && !_isDay)
         {
-            Debug.Log("Day started");
             StartDay();
             _isDay = true;
         }
@@ -41,7 +40,7 @@ public class DayNight : MonoBehaviour
         {
             _speed = _speed > 1.1f ? 1f : 50f;
         }
-    }
+    } 
 
     private void StartDay()
     {
