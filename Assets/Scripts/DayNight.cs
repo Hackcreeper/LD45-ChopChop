@@ -45,10 +45,12 @@ public class DayNight : MonoBehaviour
 
     private void StartDay()
     {
+        Waves.Instance.EndWave();
     }
 
     private void StartNight()
     {
+        Waves.Instance.StartWave();
     }
 
     public bool IsDay() => _rotation <= 180f;
