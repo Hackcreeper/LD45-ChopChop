@@ -26,6 +26,11 @@ public class Resources : MonoBehaviour
     {
         _resources[type] = Get(type) + amount;
     }
+
+    public void Sub(ResourceType type, int amount)
+    {
+        _resources[type] = Get(type) - amount;
+    }
 }
 
 public enum ResourceType
@@ -33,5 +38,5 @@ public enum ResourceType
     Wood,
     Stone,
     Oil,
-    Bone
+    Metal
 }

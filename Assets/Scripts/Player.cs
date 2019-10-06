@@ -36,6 +36,8 @@ public class Player : MonoBehaviour
     {
         if (_health.Get() <= 0)
         {
+            ScoreTransmitter.Instance.SetScore(DayNight.Instance.GetNightsSurvived());
+            ScoreTransmitter.Instance.SetReason(GameOverReason.PlayerDied);
             SceneManager.LoadScene("GameOver");
             return;
         }
@@ -48,6 +50,14 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             GainAxe();
+        }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            Resources.Instance.Add(ResourceType.Wood, 10);
+            Resources.Instance.Add(ResourceType.Stone, 10);
+            Resources.Instance.Add(ResourceType.Oil, 10);
+            Resources.Instance.Add(ResourceType.Metal, 10);
         }
         
         var vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
