@@ -26,7 +26,7 @@ public class Drone : Interactable
         Attack();
     }
 
-    private void Attack()
+    private void Attack() 
     {
         _attackTimer -= Time.deltaTime;
         
