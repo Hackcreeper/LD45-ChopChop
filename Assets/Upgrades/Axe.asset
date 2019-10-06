@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Axe
   m_EditorClassIdentifier: 
   displayName: Axe
-  uniqueIdentifier: axe
+  type: 0
   unlocks: []
   costs:
   - type: 0

@@ -49,6 +49,14 @@ public class Player : MonoBehaviour
         {
             GainAxe();
         }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            Resources.Instance.Add(ResourceType.Wood, 10);
+            Resources.Instance.Add(ResourceType.Stone, 10);
+            Resources.Instance.Add(ResourceType.Oil, 10);
+            Resources.Instance.Add(ResourceType.Bone, 10);
+        }
         
         var vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         var horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;

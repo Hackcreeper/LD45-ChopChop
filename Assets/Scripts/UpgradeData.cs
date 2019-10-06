@@ -5,7 +5,7 @@ using UnityEngine;
 public class UpgradeData : ScriptableObject
 {
     public string displayName;
-    public string uniqueIdentifier;
+    public UpgradeType type;
     public UpgradeData[] unlocks;
     public UpgradeCosts[] costs;
     public Sprite icon;
