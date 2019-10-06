@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
     {
         if (_health.Get() <= 0)
         {
+            ScoreTransmitter.Instance.Set(DayNight.Instance.GetNightsSurvived());
             SceneManager.LoadScene("GameOver");
             return;
         }
