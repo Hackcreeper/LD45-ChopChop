@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
@@ -27,14 +28,14 @@ public class Axe : MonoBehaviour
 
     public void StartCutting()
     {
-        _animator.SetBool("cutting", true);
         _active = true;
+        StartCoroutine(StartCuttingAnimation());
     }
 
     public void StartAttack()
     {
-        _animator.SetBool("attacking", true);
         _attacking = true;
+        StartCoroutine(StartAttackingAnimation());
     }
     
     public void MakeDamage()
@@ -55,17 +56,18 @@ public class Axe : MonoBehaviour
         }
     }
 
-    private void Update()
+    private IEnumerator StartCuttingAnimation()
     {
-        if (_active)
-        {
-            _animator.SetBool("cutting", false);
-        }
-
-        if (_attacking)
-        {
-            _animator.SetBool("attacking", false);
-        }
+        _animator.SetBool("cutting", true);
+        yield return null;
+        _animator.SetBool("cutting", false);
+    }
+    
+    private IEnumerator StartAttackingAnimation()
+    {
+        _animator.SetBool("attacking", true);
+        yield return null;
+        _animator.SetBool("attacking", false);
     }
     
     public bool IsActive() => _active;

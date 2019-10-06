@@ -33,8 +33,6 @@ public class Tree : Interactable
             Player.Instance.axe.SetActiveTree(this);
             Player.Instance.axe.StartCutting();
             _cutting = true;
-
-            return;
         }
     }
 
@@ -61,5 +59,10 @@ public class Tree : Interactable
     {
         Resources.Instance.Add(ResourceType.Wood, 10);
         Destroy(ownRigidBody.gameObject);
+    }
+
+    public override bool IsActive()
+    {
+        return base.IsActive() && Player.Instance.HasAxe();
     }
 }

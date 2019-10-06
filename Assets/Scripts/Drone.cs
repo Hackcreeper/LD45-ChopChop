@@ -154,4 +154,9 @@ public class Drone : Interactable
         Resources.Instance.Add(ResourceType.Bone, Random.Range(1, 5));
         Resources.Instance.Add(ResourceType.Oil, Random.Range(2, 10));
     }
+
+    public override bool IsActive()
+    {
+        return base.IsActive() && Player.Instance.HasAxe();
+    }
 }

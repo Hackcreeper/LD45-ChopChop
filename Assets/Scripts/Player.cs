@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private Rigidbody _rigidbody;
     private Transform _transform;
     private Health _health;
+    private bool _hasAxe;
 
     public LayerMask terrainLayer;
 
@@ -44,6 +45,11 @@ public class Player : MonoBehaviour
             return;
         }
 
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            GainAxe();
+        }
+        
         var vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         var horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         transform.Translate(horizontal, 0, vertical);
@@ -65,5 +71,13 @@ public class Player : MonoBehaviour
         var ray = new Ray(transform.position, -_transform.up);
 
         return Physics.Raycast(ray, out _, 1.6f, terrainLayer);
+    }
+
+    public bool HasAxe() => _hasAxe;
+
+    public void GainAxe()
+    {
+        _hasAxe = true;
+        axe.gameObject.SetActive(true);
     }
 }

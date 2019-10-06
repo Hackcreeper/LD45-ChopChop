@@ -12,5 +12,5 @@ public class Interactable : MonoBehaviour
         Focus = focus;
     }
 
-    public bool IsActive() => Active;
+    public virtual bool IsActive() => Active;
 }
