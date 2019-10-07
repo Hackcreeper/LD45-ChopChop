@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &8402647630609557309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7193016455815899277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a622aefff1460eafc8734dd0b31e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 4
+  speed: 5
+  redTexture: {fileID: 2800000, guid: f95bbd78a9cc14f23b89fa659630fd8c, type: 3}
+  meshRenderer: {fileID: 5535165684600437097}
+  spearAnimator: {fileID: 4998131307456413790}
+--- !u!1001 &8666130394064873195
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1988055521135021670, guid: 2f1fce81e0c744a1ea47365afa3bce24,
+        type: 3}
+      propertyPath: m_Name
+      value: TutorialDrone
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899239004197504496, guid: 2f1fce81e0c744a1ea47365afa3bce24,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899239004197504496, guid: 2f1fce81e0c744a1ea47365afa3bce24,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899239004197504496, guid: 2f1fce81e0c744a1ea47365afa3bce24,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899239004197504496, guid: 2f1fce81e0c744a1ea47365afa3bce24,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899239004197504496, guid: 2f1fce81e0c744a1ea47365afa3bce24,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899239004197504496, guid: 2f1fce81e0c744a1ea47365afa3bce24,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899239004197504496, guid: 2f1fce81e0c744a1ea47365afa3bce24,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899239004197504496, guid: 2f1fce81e0c744a1ea47365afa3bce24,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899239004197504496, guid: 2f1fce81e0c744a1ea47365afa3bce24,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899239004197504496, guid: 2f1fce81e0c744a1ea47365afa3bce24,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899239004197504496, guid: 2f1fce81e0c744a1ea47365afa3bce24,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295050314216393227, guid: 2f1fce81e0c744a1ea47365afa3bce24,
+        type: 3}
+      propertyPath: drone
+      value: 
+      objectReference: {fileID: 8402647630609557309}
+    m_RemovedComponents:
+    - {fileID: 1451156021, guid: 2f1fce81e0c744a1ea47365afa3bce24, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 2f1fce81e0c744a1ea47365afa3bce24, type: 3}
+--- !u!1 &7193016455815899277 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1988055521135021670, guid: 2f1fce81e0c744a1ea47365afa3bce24,
+    type: 3}
+  m_PrefabInstance: {fileID: 8666130394064873195}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &5535165684600437097 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3788825194344849282, guid: 2f1fce81e0c744a1ea47365afa3bce24,
+    type: 3}
+  m_PrefabInstance: {fileID: 8666130394064873195}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4998131307456413790 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4402455951135811253, guid: 2f1fce81e0c744a1ea47365afa3bce24,
+    type: 3}
+  m_PrefabInstance: {fileID: 8666130394064873195}
+  m_PrefabAsset: {fileID: 0}

@@ -10,7 +10,7 @@ public class Drone : Interactable
     public MeshRenderer meshRenderer;
     public Animator spearAnimator;
 
-    private readonly IDroneTarget[] _targets =
+    protected IDroneTarget[] Targets =
     {
         new PlayerTarget(),
         new FenceTarget(), 
@@ -21,27 +21,28 @@ public class Drone : Interactable
         new BaseTarget()
     };
 
+    protected Health Health;
+    protected float Flashing;
+    protected Rigidbody Rigidbody;
+    protected BoxCollider BoxCollider;
+    protected CapsuleCollider CapsuleCollider;
+    protected Animator Animator;
+    
     private Transform _transform;
     private float _attackTimer = 1f;
     private bool _running;
-    private float _flashing;
-    private Health _health;
-    private Rigidbody _rigidbody;
-    private BoxCollider _boxCollider;
-    private CapsuleCollider _capsuleCollider;
     private float _deathTimer = 2f;
-    private Animator _animator;
     private Texture _originalTexture;
     private IDroneTarget _target;
 
     private void Start()
     {
         _transform = transform;
-        _health = GetComponent<Health>();
-        _rigidbody = GetComponent<Rigidbody>();
-        _capsuleCollider = GetComponent<CapsuleCollider>();
-        _boxCollider = GetComponent<BoxCollider>();
-        _animator = GetComponentInChildren<Animator>();
+        Health = GetComponent<Health>();
+        Rigidbody = GetComponent<Rigidbody>();
+        CapsuleCollider = GetComponent<CapsuleCollider>();
+        BoxCollider = GetComponent<BoxCollider>();
+        Animator = GetComponentInChildren<Animator>();
         _originalTexture = meshRenderer.material.mainTexture;
     }
 
@@ -64,13 +65,13 @@ public class Drone : Interactable
             Player.Instance.axe.StartAttack();
         }
 
-        _flashing -= Time.deltaTime;
-        if (_flashing <= 0)
+        Flashing -= Time.deltaTime;
+        if (Flashing <= 0)
         {
             meshRenderer.material.mainTexture = _originalTexture;
         }
 
-        if (_health.Get() <= 0)
+        if (Health.Get() <= 0)
         {
             _deathTimer -= Time.deltaTime;
             if (_deathTimer <= 0)
@@ -136,7 +137,7 @@ public class Drone : Interactable
 
     private void FindTarget()
     {
-        _target = _targets.FirstOrDefault(target => target.CanAttack(this));
+        _target = Targets.FirstOrDefault(target => target.CanAttack(this));
     }
 
     public void Run()
@@ -145,24 +146,24 @@ public class Drone : Interactable
         _running = true;
     }
 
-    public void TakeDamage(int amount = 1)
+    public virtual void TakeDamage(int amount = 1)
     {
-        _health.Sub(amount);
+        Health.Sub(amount);
 
-        _flashing = .15f;
+        Flashing = .15f;
         meshRenderer.material.mainTexture = redTexture;
 
-        _rigidbody.AddRelativeForce(0, 0, -10f, ForceMode.Impulse);
+        Rigidbody.AddRelativeForce(0, 0, -10f, ForceMode.Impulse);
         ResetAttackTimer();
 
-        if (_health.Get() > 0)
+        if (Health.Get() > 0)
         {
             return;
         }
 
-        _boxCollider.enabled = true;
-        _capsuleCollider.enabled = false;
-        _animator.enabled = false;
+        BoxCollider.enabled = true;
+        CapsuleCollider.enabled = false;
+        Animator.enabled = false;
         Active = false;
         
         Waves.Instance.RemoveDrone(gameObject);
