@@ -1251,3 +1251,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drone: {fileID: 1451156021}
+  playerHitSound: {fileID: 8300000, guid: bd6cbd68e9742f143a379970b94cd18a, type: 3}

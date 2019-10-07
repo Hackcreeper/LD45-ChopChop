@@ -53,21 +53,7 @@ public class Player : MonoBehaviour
         {
             return;
         }
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            GainAxe();
-            GainPickaxe();
-        }
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            Resources.Instance.Add(ResourceType.Wood, 10);
-            Resources.Instance.Add(ResourceType.Stone, 10);
-            Resources.Instance.Add(ResourceType.Oil, 10);
-            Resources.Instance.Add(ResourceType.Metal, 10);
-        }
-
+        
         var velocity = _rigidbody.velocity.y + Physics.gravity.y * Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {

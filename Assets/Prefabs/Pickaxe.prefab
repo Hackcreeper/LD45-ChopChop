@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08563e3792ff4a7c9b8101855f2437d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hittingClip: {fileID: 8300000, guid: c8e6a97c002834272a52b11a7d16f6bc, type: 3}
+  hittingClip: {fileID: 8300000, guid: 73aeaecce42547b4992940d437e377d4, type: 3}
 --- !u!1001 &3507654560272984098
 PrefabInstance:
   m_ObjectHideFlags: 0
