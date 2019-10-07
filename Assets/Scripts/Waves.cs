@@ -8,9 +8,9 @@ public class Waves : MonoBehaviour
 
     public GameObject dronePrefab;
     public GameObject skipToDayInfo;
-    
-    private float waveMultiplicator = 1.4f;
-    
+
+    private const float WaveMultiplicator = 1.25f;
+
     private int _droneAmount = 4;
     private bool _waveRunning;
 
@@ -41,7 +41,7 @@ public class Waves : MonoBehaviour
 
     public void EndWave()
     {
-        _droneAmount = Mathf.CeilToInt(_droneAmount * waveMultiplicator);
+        _droneAmount = Mathf.CeilToInt(_droneAmount * WaveMultiplicator);
         
         _drones.ForEach(drone =>
         {

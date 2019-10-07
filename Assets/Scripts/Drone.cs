@@ -173,7 +173,7 @@ public class Drone : Interactable
         Waves.Instance.RemoveDrone(gameObject);
 
         Resources.Instance.Add(ResourceType.Metal, Random.Range(1, 5));
-        Resources.Instance.Add(ResourceType.Oil, Random.Range(1, 5));
+        Resources.Instance.Add(ResourceType.Oil, Random.Range(2, 8));
     }
 
     public override bool IsActive()
