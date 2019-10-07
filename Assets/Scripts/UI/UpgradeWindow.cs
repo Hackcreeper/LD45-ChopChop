@@ -24,10 +24,12 @@ namespace UI
 
         private void Update()
         {
+            infoNoUpgrades.SetActive(false);
+            infoOnlyOnDay.SetActive(false);
+            
             if (upgrades.Count == 0)
             {
                 infoNoUpgrades.SetActive(true);
-                infoOnlyOnDay.SetActive(false);
             }
 
             if (!DayNight.Instance.IsDay())

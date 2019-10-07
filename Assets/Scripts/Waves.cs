@@ -7,10 +7,12 @@ public class Waves : MonoBehaviour
     public static Waves Instance { private set; get; }
 
     public GameObject dronePrefab;
+    public GameObject skipToDayInfo;
+    
     private float waveMultiplicator = 1.4f;
     
-    private int _droneAmount = 4;
-    private int _currentWave = 1;
+    private int _droneAmount = 1; // 4;
+    private bool _waveRunning;
 
     private GameObject[] _spawner;
     private readonly List<GameObject> _drones = new List<GameObject>();
@@ -33,11 +35,12 @@ public class Waves : MonoBehaviour
 
             _drones.Add(Instantiate(dronePrefab, spawner.transform.position, Quaternion.identity));
         }
+
+        _waveRunning = true;
     }
 
     public void EndWave()
     {
-        _currentWave++;
         _droneAmount = Mathf.CeilToInt(_droneAmount * waveMultiplicator);
         
         _drones.ForEach(drone =>
@@ -48,6 +51,8 @@ public class Waves : MonoBehaviour
             }
         });
         _drones.Clear();
+
+        _waveRunning = false;
     }
 
     public List<GameObject> GetDrones() => _drones;
@@ -60,5 +65,23 @@ public class Waves : MonoBehaviour
     private GameObject SelectRandomSpawner()
     {
         return _spawner[Random.Range(0, _spawner.Length - 1)];
+    }
+
+    private void Update()
+    {
+        if (_waveRunning && _drones.Count == 0)
+        {
+            skipToDayInfo.SetActive(true);
+            if (!Input.GetKeyDown(KeyCode.T))
+            {
+                return;
+            }
+            
+            DayNight.Instance.Skip();
+
+            return;
+        }
+        
+        skipToDayInfo.SetActive(false);
     }
 }

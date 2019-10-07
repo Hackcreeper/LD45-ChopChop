@@ -56,6 +56,11 @@ public class DayNight : MonoBehaviour
         Waves.Instance.StartWave();
     }
 
+    public void Skip()
+    {
+        _rotation = 0;
+    }
+    
     public bool IsDay() => _rotation <= 180f;
 
     public int GetNightsSurvived() => _nightsSurvived;
