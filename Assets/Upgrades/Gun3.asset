@@ -18,7 +18,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 18dcfeae49fcc4686b18aef8a770ef4a, type: 2}
   costs:
   - type: 2
-    amount: 55
+    amount: 60
   - type: 3
-    amount: 32
+    amount: 30
+  - type: 0
+    amount: 30
   icon: {fileID: 21300000, guid: 119aeb9b18ad3d540bf5a329c109d107, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c4619d1ac20417bb5fa5b1ab2d766bd, type: 3}
   m_Name: Gun
   m_EditorClassIdentifier: 
-  displayName: Gun
+  displayName: Ballista
   type: 4
   unlocks:
   - {fileID: 11400000, guid: 460c1f1556cb34d5eabc32a393153f19, type: 2}
@@ -20,5 +20,7 @@ MonoBehaviour:
   - type: 2
     amount: 30
   - type: 3
+    amount: 20
+  - type: 0
     amount: 20
   icon: {fileID: 21300000, guid: 119aeb9b18ad3d540bf5a329c109d107, type: 3}

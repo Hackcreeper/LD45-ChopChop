@@ -19,5 +19,7 @@ MonoBehaviour:
   - type: 2
     amount: 75
   - type: 3
-    amount: 40
+    amount: 35
+  - type: 0
+    amount: 35
   icon: {fileID: 21300000, guid: 119aeb9b18ad3d540bf5a329c109d107, type: 3}
