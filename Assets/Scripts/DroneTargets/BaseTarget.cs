@@ -16,7 +16,7 @@ namespace DroneTargets
 
         public float GetAttackDistance()
         {
-            return 6f;
+            return 8f;
         }
     }
 }

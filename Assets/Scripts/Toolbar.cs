@@ -36,6 +36,8 @@ public class Toolbar : MonoBehaviour
             SwitchTool();
             return;
         }
+        
+        Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
     }
     
     public Tool GetActiveTool() => _activeTool;

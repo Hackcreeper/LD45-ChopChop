@@ -1,6 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 namespace UI
 {
@@ -9,16 +11,8 @@ namespace UI
         public UpgradeData data;
         public UpgradeWindow upgradeWindow;
 
-        // Analytics
-        public UpgradeType type;
-
         public void Update()
         {
-            if (data)
-            {
-                type = data.type;
-            }
-
             if (!Focus || !Input.GetMouseButtonDown(0) || !IsActive())
             {
                 return;
@@ -28,7 +22,7 @@ namespace UI
             {
                 upgradeWindow.infoNotEnoughResources.SetActive(true);
                 StartCoroutine(HideNotEnoughResourcesInfo());
-                
+
                 return;
             }
 
@@ -36,6 +30,20 @@ namespace UI
             HandleUpgrade();
             RemoveOldUpgrade();
             UnlockNewUpgrades();
+            SendAnalytics();
+        }
+
+        private void SendAnalytics()
+        {
+            Analytics.CustomEvent("upgrade", new Dictionary<string, object>
+            {
+                {
+                    "type", data.type
+                },
+                {
+                    "score", DayNight.Instance.GetNightsSurvived()
+                }
+            });
         }
 
         private IEnumerator HideNotEnoughResourcesInfo()
