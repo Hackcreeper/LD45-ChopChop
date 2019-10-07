@@ -10,7 +10,7 @@ public class Gun : MonoBehaviour
 
     private Transform _target;
     private Transform _transform;
-    private float _attackTimer = 6f;
+    private float _attackTimer = 3f;
     private float _respawnTimer;
     private Health _health;
     private AudioSource _audioSource;
@@ -67,7 +67,7 @@ public class Gun : MonoBehaviour
         newSpear.GetComponent<CrossbowSpear>().SetTarget(_target);
         
         _audioSource.Play();
-        _attackTimer = 6f;
+        _attackTimer = 3f;
     }
 
     private void RotateToTarget()
