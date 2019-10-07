@@ -4,6 +4,8 @@ public class DayNight : MonoBehaviour
 {
     public static DayNight Instance { private set; get; }
 
+    public GameObject skipText;
+
     private float _speed = 1f;
     private float _rotation;
     private bool _isDay = true;
@@ -16,6 +18,13 @@ public class DayNight : MonoBehaviour
 
     private void Update()
     {
+        skipText.SetActive(_isDay);
+        
+        if (_isDay && Input.GetKeyDown(KeyCode.T))
+        {
+            _rotation = 200;
+        }
+        
         _rotation += Time.deltaTime / 1.5f * _speed;
         if (_rotation >= 360f)
         {
