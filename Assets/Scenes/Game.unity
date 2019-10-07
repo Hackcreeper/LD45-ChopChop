@@ -6656,44 +6656,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 2534964839176971238, guid: efc3f3b15b1de604b9c30194ef2be163, type: 3}
---- !u!1 &1111378271 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3507654559979827175, guid: c092bf8f9f35041ed8ab44262b7a5653,
-    type: 3}
-  m_PrefabInstance: {fileID: 3507654558872381112}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1111378272 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3507654559979827160, guid: c092bf8f9f35041ed8ab44262b7a5653,
     type: 3}
   m_PrefabInstance: {fileID: 3507654558872381112}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1111378273
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1111378271}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ef82ab0f6e1b84bf6944ec080085d0c5, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1111378274
+--- !u!114 &1111378274 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1111378274, guid: c092bf8f9f35041ed8ab44262b7a5653,
+    type: 3}
+  m_PrefabInstance: {fileID: 3507654558872381112}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1111378271}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08563e3792ff4a7c9b8101855f2437d5, type: 3}
@@ -16952,11 +16927,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pickaxe
       objectReference: {fileID: 0}
-    - target: {fileID: 3507654559979827175, guid: c092bf8f9f35041ed8ab44262b7a5653,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3507654559979827160, guid: c092bf8f9f35041ed8ab44262b7a5653,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17010,46 +16980,6 @@ PrefabInstance:
     - target: {fileID: 3507654559979827160, guid: c092bf8f9f35041ed8ab44262b7a5653,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8491262161421599544, guid: c092bf8f9f35041ed8ab44262b7a5653,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8491262161421599544, guid: c092bf8f9f35041ed8ab44262b7a5653,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8491262161421599544, guid: c092bf8f9f35041ed8ab44262b7a5653,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.75527024
-      objectReference: {fileID: 0}
-    - target: {fileID: 8491262161421599544, guid: c092bf8f9f35041ed8ab44262b7a5653,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.6554135
-      objectReference: {fileID: 0}
-    - target: {fileID: 8491262161421599544, guid: c092bf8f9f35041ed8ab44262b7a5653,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 278.098
-      objectReference: {fileID: 0}
-    - target: {fileID: 8491262161421599544, guid: c092bf8f9f35041ed8ab44262b7a5653,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8491262161421599544, guid: c092bf8f9f35041ed8ab44262b7a5653,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8491262161421599544, guid: c092bf8f9f35041ed8ab44262b7a5653,
-        type: 3}
-      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

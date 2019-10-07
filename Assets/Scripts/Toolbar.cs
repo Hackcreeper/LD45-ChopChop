@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,9 @@ public class Toolbar : MonoBehaviour
     public GameObject toolbarCanvas;
     public Outline axe;
     public Outline pickaxe;
-    
+
+    private float _scrollTimer;
+
     private Tool _activeTool = Tool.None;
 
     private void Awake()
@@ -22,24 +25,37 @@ public class Toolbar : MonoBehaviour
         {
             return;
         }
-        
+
         if (Player.Instance.HasAxe() && Input.GetKeyDown(KeyCode.Alpha1))
         {
             _activeTool = Tool.Axe;
             SwitchTool();
             return;
         }
-        
+
         if (Player.Instance.HasPickaxe() && Input.GetKeyDown(KeyCode.Alpha2))
         {
             _activeTool = Tool.Pickaxe;
             SwitchTool();
             return;
         }
-        
-        Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
+
+        if (!Player.Instance.HasPickaxe() || !Player.Instance.HasAxe())
+        {
+            return;
+        }
+
+        _scrollTimer -= Time.deltaTime;
+        if (Math.Abs(Input.GetAxis("Mouse ScrollWheel")) < 0.001f || _scrollTimer > 0)
+        {
+            return;
+        }
+
+        _scrollTimer = .5f;
+        _activeTool = _activeTool == Tool.Axe ? Tool.Pickaxe : Tool.Axe;
+        SwitchTool();
     }
-    
+
     public Tool GetActiveTool() => _activeTool;
 
     public void SetActiveTool(Tool tool)
@@ -57,21 +73,21 @@ public class Toolbar : MonoBehaviour
 
         Player.Instance.axe.gameObject.SetActive(false);
         Player.Instance.pickaxe.gameObject.SetActive(false);
-        
+
         axe.effectColor = new Color(0, 0, 0, 0);
         pickaxe.effectColor = new Color(0, 0, 0, 0);
-        
+
         switch (_activeTool)
         {
             case Tool.None:
                 break;
             case Tool.Axe:
                 Player.Instance.axe.gameObject.SetActive(true);
-                axe.effectColor = new Color(0.70f,0.305f, 0, 1f);
+                axe.effectColor = new Color(0.70f, 0.305f, 0, 1f);
                 break;
             case Tool.Pickaxe:
                 Player.Instance.pickaxe.gameObject.SetActive(true);
-                pickaxe.effectColor = new Color(0.70f,0.305f, 0, 1f);
+                pickaxe.effectColor = new Color(0.70f, 0.305f, 0, 1f);
                 break;
             default:
                 Debug.LogError("Tool not implemented!");
