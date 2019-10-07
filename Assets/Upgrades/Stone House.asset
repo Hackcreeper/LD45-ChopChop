@@ -17,5 +17,5 @@ MonoBehaviour:
   unlocks: []
   costs:
   - type: 1
-    amount: 20
+    amount: 45
   icon: {fileID: 21300000, guid: 246dd1501daa5e1458cca4131eafa80d, type: 3}
