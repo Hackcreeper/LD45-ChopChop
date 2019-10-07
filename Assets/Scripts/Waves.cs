@@ -23,13 +23,6 @@ public class Waves : MonoBehaviour
     public void Start()
     {
         _spawner = GameObject.FindGameObjectsWithTag("Spawner");
-        
-        for (var i = 0; i < _droneAmount; i++)
-        {
-            var spawner = SelectRandomSpawner();
-
-            _drones.Add(Instantiate(dronePrefab, spawner.transform.position, Quaternion.identity));
-        }
     }
     
     public void StartWave()

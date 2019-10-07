@@ -65,14 +65,15 @@ public class Player : MonoBehaviour
             Resources.Instance.Add(ResourceType.Metal, 10);
         }
 
-        var vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-        var horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        transform.Translate(horizontal, 0, vertical);
-
+        var velocity = _rigidbody.velocity.y + Physics.gravity.y * Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
-            _rigidbody.AddForce(Time.deltaTime * 14000f * transform.up);
+            velocity = 10f;
         }
+        
+        var vertical = Input.GetAxis("Vertical") * speed;
+        var horizontal = Input.GetAxis("Horizontal") * speed;
+        _rigidbody.velocity = transform.rotation * new Vector3(horizontal, velocity, vertical);
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
