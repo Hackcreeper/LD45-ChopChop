@@ -23,4 +23,4 @@ MonoBehaviour:
     amount: 30
   - type: 0
     amount: 30
-  icon: {fileID: 21300000, guid: 119aeb9b18ad3d540bf5a329c109d107, type: 3}
+  icon: {fileID: 21300000, guid: e28fed66b079b29448411a4c608cf3ff, type: 3}
