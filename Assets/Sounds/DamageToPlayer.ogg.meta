@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Sounds/DamageToPlayer.ogg.meta
 guid: bd6cbd68e9742f143a379970b94cd18a
+=======
+guid: 0dea827672a70494195a60017ed3bbf4
+>>>>>>> master:Assets/Sounds/Pickaxe1.ogg.meta
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6

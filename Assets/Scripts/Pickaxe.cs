@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Pickaxe : MonoBehaviour
 {
+    public AudioClip hittingClip;
+    
     private Animator _animator;
 
     private void Start()
@@ -11,11 +13,13 @@ public class Pickaxe : MonoBehaviour
 
     public void StartHitting()
     {
+        Player.Instance.PlaySound(hittingClip, true);
         _animator.SetBool("hitting", true);
     }
     
     public void StopHitting()
     {
+        Player.Instance.StopSound();
         _animator.SetBool("hitting", false);
     }
 

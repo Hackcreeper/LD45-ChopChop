@@ -28,7 +28,6 @@ public class Axe : MonoBehaviour
 
     public void StartCutting()
     {
-        Player.Instance.PlaySound(cuttingClip);
         _active = true;
         StartCoroutine(StartCuttingAnimation());
     }
@@ -60,6 +59,7 @@ public class Axe : MonoBehaviour
     private IEnumerator StartCuttingAnimation()
     {
         _animator.SetBool("cutting", true);
+        Player.Instance.PlaySound(cuttingClip);
         yield return null;
         _animator.SetBool("cutting", false);
     }

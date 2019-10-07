@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Sounds/Pickaxe.ogg.meta
 guid: 73aeaecce42547b4992940d437e377d4
+=======
+guid: c8e6a97c002834272a52b11a7d16f6bc
+>>>>>>> master:Assets/Sounds/Pickaxe2.ogg.meta
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6

@@ -102,9 +102,16 @@ public class Player : MonoBehaviour
         Toolbar.Instance.SetActiveTool(Tool.Pickaxe);
     }
 
-    public void PlaySound(AudioClip clip)
+    public void PlaySound(AudioClip clip, bool loop = false)
     {
         _audioSource.clip = clip;
+        _audioSource.loop = loop;
         _audioSource.Play();
+    }
+
+    public void StopSound()
+    {
+        _audioSource.loop = false;
+        _audioSource.Stop();
     }
 }
