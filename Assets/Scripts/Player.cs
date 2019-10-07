@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
@@ -6,6 +7,8 @@ public class Player : MonoBehaviour
     public static Player Instance { private set; get; }
     public float speed = 10.0f;
     public Axe axe;
+    public BoxCollider fenceCollider;
+    public BoxCollider houseCollider;
 
     private Rigidbody _rigidbody;
     private Transform _transform;
@@ -25,7 +28,7 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene("Level", LoadSceneMode.Additive);
         }
-        
+
         Cursor.lockState = CursorLockMode.Locked;
         _rigidbody = GetComponent<Rigidbody>();
         _transform = GetComponent<Transform>();
@@ -59,7 +62,7 @@ public class Player : MonoBehaviour
             Resources.Instance.Add(ResourceType.Oil, 10);
             Resources.Instance.Add(ResourceType.Metal, 10);
         }
-        
+
         var vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         var horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         transform.Translate(horizontal, 0, vertical);
