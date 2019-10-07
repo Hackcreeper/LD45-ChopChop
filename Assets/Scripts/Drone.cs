@@ -14,6 +14,7 @@ public class Drone : Interactable
     {
         new PlayerTarget(),
         new FenceTarget(), 
+        new Gun1Target(),
         new BaseTarget()
     };
 
@@ -141,9 +142,9 @@ public class Drone : Interactable
         _running = true;
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int amount = 1)
     {
-        _health.Sub();
+        _health.Sub(amount);
 
         _flashing = .15f;
         meshRenderer.material.mainTexture = redTexture;
@@ -160,6 +161,8 @@ public class Drone : Interactable
         _capsuleCollider.enabled = false;
         _animator.enabled = false;
         Active = false;
+        
+        Waves.Instance.RemoveDrone(gameObject);
 
         Resources.Instance.Add(ResourceType.Metal, Random.Range(1, 5));
         Resources.Instance.Add(ResourceType.Oil, Random.Range(2, 10));

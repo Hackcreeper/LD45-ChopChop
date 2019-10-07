@@ -24,7 +24,7 @@ public class Waves : MonoBehaviour
     {
         _spawner = GameObject.FindGameObjectsWithTag("Spawner");
         
-        for (var i = 0; i < _droneAmount * 30; i++)
+        for (var i = 0; i < _droneAmount; i++)
         {
             var spawner = SelectRandomSpawner();
 
@@ -58,6 +58,11 @@ public class Waves : MonoBehaviour
     }
 
     public List<GameObject> GetDrones() => _drones;
+
+    public void RemoveDrone(GameObject drone)
+    {
+        _drones.Remove(drone);
+    }
     
     private GameObject SelectRandomSpawner()
     {

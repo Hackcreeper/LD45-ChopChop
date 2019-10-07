@@ -120,6 +120,11 @@ public class Base : MonoBehaviour
             Fence.Instance.GetComponent<Health>().HealFull();
         }
         
+        if (_gun1Enabled)
+        {
+            _transform.Find("Gun1").GetComponent<Health>().HealFull();
+        }
+        
         RerenderBase();
     }
 }

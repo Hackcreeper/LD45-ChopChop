@@ -165,6 +165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2587730347794568990}
+  - component: {fileID: 530431394}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -188,6 +189,25 @@ Transform:
   m_Father: {fileID: 7391466662190684532}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &530431394
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563363502634951949}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2711ad12f2b484f41b78f778c5bc34f2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2841076052942090142
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,6 +374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7391466662190684532}
   - component: {fileID: 514897545}
+  - component: {fileID: 2366971225879749372}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -389,6 +410,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mounts: {fileID: 6499936089318193867}
+  spear: {fileID: 757742708002242577}
+  spearPrefab: {fileID: 559939942919594714, guid: f427a304db9564c548493755a85df976,
+    type: 3}
+--- !u!114 &2366971225879749372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7391466662190684533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f0e4eaf59f2431c90145176248ef4c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 7
 --- !u!1 &8509729738120404016
 GameObject:
   m_ObjectHideFlags: 0
