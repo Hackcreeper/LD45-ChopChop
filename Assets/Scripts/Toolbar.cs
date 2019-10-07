@@ -9,6 +9,7 @@ public class Toolbar : MonoBehaviour
     public GameObject toolbarCanvas;
     public Outline axe;
     public Outline pickaxe;
+    public Color activeColor;
 
     private float _scrollTimer;
 
@@ -76,6 +77,8 @@ public class Toolbar : MonoBehaviour
 
         axe.effectColor = new Color(0, 0, 0, 0);
         pickaxe.effectColor = new Color(0, 0, 0, 0);
+        axe.GetComponent<Image>().color = Color.white;
+        pickaxe.GetComponent<Image>().color = Color.white;
 
         switch (_activeTool)
         {
@@ -84,10 +87,12 @@ public class Toolbar : MonoBehaviour
             case Tool.Axe:
                 Player.Instance.axe.gameObject.SetActive(true);
                 axe.effectColor = new Color(0.70f, 0.305f, 0, 1f);
+                axe.GetComponent<Image>().color = activeColor;
                 break;
             case Tool.Pickaxe:
                 Player.Instance.pickaxe.gameObject.SetActive(true);
                 pickaxe.effectColor = new Color(0.70f, 0.305f, 0, 1f);
+                pickaxe.GetComponent<Image>().color = activeColor;
                 break;
             default:
                 Debug.LogError("Tool not implemented!");

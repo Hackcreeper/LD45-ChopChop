@@ -488,6 +488,7 @@ MonoBehaviour:
   toolbarCanvas: {fileID: 862420172}
   axe: {fileID: 156281721}
   pickaxe: {fileID: 1053093810}
+  activeColor: {r: 0.47058824, g: 0.77254903, b: 0.31764707, a: 1}
 --- !u!1 &42219894 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: f35f814da93b2264e8f98414c039a562,
@@ -6338,7 +6339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.47138488, g: 0.7735849, b: 0.31746176, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
