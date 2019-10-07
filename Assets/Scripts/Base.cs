@@ -11,6 +11,7 @@ public class Base : MonoBehaviour
     private Transform _transform;
     private Health _health;
     private bool _fenceEnabled;
+    private bool _gun1Enabled;
     
     private void Awake()
     {
@@ -75,6 +76,11 @@ public class Base : MonoBehaviour
         {
             _transform.Find("Fence").gameObject.SetActive(true);
         }
+
+        if (_gun1Enabled)
+        {
+            _transform.Find("Gun1").gameObject.SetActive(true);
+        }
     }
 
     private void Update()
@@ -97,6 +103,14 @@ public class Base : MonoBehaviour
 
     public bool IsFenceEnabled() => _fenceEnabled;
 
+    public void EnableGun1()
+    {
+        _gun1Enabled = true;
+        RerenderBase();
+    }
+
+    public bool IsGun1Enabled() => _gun1Enabled;
+    
     public void Regenerate()
     {
         _health.HealFull();

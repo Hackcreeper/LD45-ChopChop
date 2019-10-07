@@ -64,6 +64,9 @@ namespace UI
                 case UpgradeType.Pickaxe:
                     Player.Instance.GainPickaxe();
                     break;
+                case UpgradeType.Gun:
+                    Base.Instance.EnableGun1();
+                    break;
                 default:
                     Debug.LogError("Upgrade not implemented!");
                     break;
