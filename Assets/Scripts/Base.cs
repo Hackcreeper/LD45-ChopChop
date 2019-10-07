@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,8 @@ public class Base : MonoBehaviour
     public static Base Instance { private set; get; }
 
     public GameObject healthBar;
+    private int healthWood = 15;
+    private int healthStone = 40;
 
     private BaseLevel _level = BaseLevel.None;
     private Transform _transform;
@@ -26,6 +29,23 @@ public class Base : MonoBehaviour
     public void SetLevel(BaseLevel level)
     {
         _level = level;
+
+        switch (level)
+        {
+            case BaseLevel.None:
+                break;
+            case BaseLevel.WoodenHouse:
+                _health.maxHealth = healthWood;
+                break;
+            case BaseLevel.StoneHouse:
+                _health.maxHealth = healthStone;
+                break;
+            default:
+                Debug.LogError("Base level not implemented!");
+                break;
+        }
+        
+        _health.HealFull();
         RerenderBase();
     }
 

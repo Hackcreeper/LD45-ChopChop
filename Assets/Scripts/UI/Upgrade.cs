@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
@@ -25,6 +26,9 @@ namespace UI
 
             if (!CheckCosts())
             {
+                upgradeWindow.infoNotEnoughResources.SetActive(true);
+                StartCoroutine(HideNotEnoughResourcesInfo());
+                
                 return;
             }
 
@@ -32,6 +36,12 @@ namespace UI
             HandleUpgrade();
             RemoveOldUpgrade();
             UnlockNewUpgrades();
+        }
+
+        private IEnumerator HideNotEnoughResourcesInfo()
+        {
+            yield return new WaitForSeconds(2);
+            upgradeWindow.infoNotEnoughResources.SetActive(false);
         }
 
         private void UnlockNewUpgrades()
