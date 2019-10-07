@@ -13,17 +13,20 @@ public class Gun : MonoBehaviour
     private float _attackTimer = 6f;
     private float _respawnTimer;
     private Health _health;
-
+    private AudioSource _audioSource;
+    
     private void Start()
     {
         _transform = transform;
         _health = GetComponent<Health>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
         if (_health.Get() <= 0)
         {
+            Base.Instance.PlayDestroySound();
             gameObject.SetActive(false);
             return;
         }
@@ -63,6 +66,7 @@ public class Gun : MonoBehaviour
         var newSpear = Instantiate(spearPrefab, spear.transform.position, spear.transform.rotation);
         newSpear.GetComponent<CrossbowSpear>().SetTarget(_target);
         
+        _audioSource.Play();
         _attackTimer = 6f;
     }
 

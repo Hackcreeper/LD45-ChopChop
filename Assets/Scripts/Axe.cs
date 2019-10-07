@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Axe : MonoBehaviour
 {
+    public AudioClip cuttingClip;
+    
     private Tree _activeTree;
     private Drone _activeDrone;
     private Animator _animator;
@@ -26,6 +28,7 @@ public class Axe : MonoBehaviour
 
     public void StartCutting()
     {
+        Player.Instance.PlaySound(cuttingClip);
         _active = true;
         StartCoroutine(StartCuttingAnimation());
     }

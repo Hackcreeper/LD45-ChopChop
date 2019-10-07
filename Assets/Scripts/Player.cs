@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public Pickaxe pickaxe;
     public BoxCollider fenceCollider;
     public BoxCollider houseCollider;
+    public AudioClip pickupClip;
 
     private Rigidbody _rigidbody;
     private Transform _transform;

@@ -27,6 +27,7 @@ public class Collectable : Interactable
         }
         
         Resources.Instance.Add(type, amount);
+        Player.Instance.PlaySound(Player.Instance.pickupClip);
         Destroy(gameObject);
     }
 }
