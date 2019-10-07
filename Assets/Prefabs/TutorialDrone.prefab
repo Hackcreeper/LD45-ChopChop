@@ -17,6 +17,7 @@ MonoBehaviour:
   redTexture: {fileID: 2800000, guid: f95bbd78a9cc14f23b89fa659630fd8c, type: 3}
   meshRenderer: {fileID: 5535165684600437097}
   spearAnimator: {fileID: 4998131307456413790}
+  hitSound: {fileID: 8300000, guid: ffd20f47b0bb73c4aa25ad05f7ad1fcd, type: 3}
 --- !u!1001 &8666130394064873195
 PrefabInstance:
   m_ObjectHideFlags: 0

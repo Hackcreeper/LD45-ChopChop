@@ -9,6 +9,7 @@ public class Drone : Interactable
     public Texture redTexture;
     public MeshRenderer meshRenderer;
     public Animator spearAnimator;
+    public AudioClip hitSound;
 
     protected IDroneTarget[] Targets =
     {
@@ -148,6 +149,7 @@ public class Drone : Interactable
 
     public virtual void TakeDamage(int amount = 1)
     {
+        Player.Instance.PlaySound(hitSound);
         Health.Sub(amount);
 
         Flashing = .15f;

@@ -1,4 +1,3 @@
-using System.Globalization;
 using Tutorial.Conditions;
 
 namespace Tutorial

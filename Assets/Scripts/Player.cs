@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     private Health _health;
     private bool _hasAxe;
     private bool _hasPickaxe;
+    private AudioSource _audioSource;
 
     public LayerMask terrainLayer;
 
@@ -34,6 +35,7 @@ public class Player : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         _transform = GetComponent<Transform>();
         _health = GetComponent<Health>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -97,5 +99,11 @@ public class Player : MonoBehaviour
     {
         _hasPickaxe = true;
         Toolbar.Instance.SetActiveTool(Tool.Pickaxe);
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        _audioSource.clip = clip;
+        _audioSource.Play();
     }
 }

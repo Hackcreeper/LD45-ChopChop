@@ -1,5 +1,3 @@
-using System.Runtime.Versioning;
-
 namespace Tutorial.Conditions
 {
     public class HasStone : ITaskCondition

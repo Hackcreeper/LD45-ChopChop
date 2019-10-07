@@ -13,6 +13,7 @@ public class TutorialDrone : Drone
 
     public override void TakeDamage(int amount = 1)
     {
+        Player.Instance.PlaySound(hitSound);
         Health.Sub(amount);
 
         Flashing = .15f;
