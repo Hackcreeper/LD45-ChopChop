@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7727141421233281921}
   - component: {fileID: 3076721310776081877}
   - component: {fileID: 8157388608749772077}
+  - component: {fileID: 8543566485932323594}
   m_Layer: 0
   m_Name: Crossbow
   m_TagString: Untagged
@@ -78,6 +79,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8543566485932323594
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418718420856320571}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 3647328372970623360, guid: c420dd1221d85244ebe5a9655b30d18e, type: 3}
 --- !u!1 &757742708002242577
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,6 +312,7 @@ GameObject:
   - component: {fileID: 3535506377600968557}
   - component: {fileID: 22471951147799622}
   - component: {fileID: 8473412420772958010}
+  - component: {fileID: 3504610888693583927}
   m_Layer: 0
   m_Name: Stand
   m_TagString: Untagged
@@ -364,6 +380,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &3504610888693583927
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4475724730995962736}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -9189612823058448048, guid: c420dd1221d85244ebe5a9655b30d18e, type: 3}
 --- !u!1 &7391466662190684533
 GameObject:
   m_ObjectHideFlags: 0

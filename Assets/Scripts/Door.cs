@@ -14,13 +14,14 @@ public class Door : Interactable
 
     public void Update()
     {
+        _animator.SetBool("open", _open);
+        
         if (!Focus || !IsActive() || !Input.GetMouseButtonDown(0))
         {
             return;
         }
 
         _open = !_open;
-        _animator.SetBool("open", _open);
         _audioSource.Play();
     }
 }
