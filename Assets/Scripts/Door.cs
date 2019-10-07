@@ -4,10 +4,12 @@ public class Door : Interactable
 {
     private Animator _animator;
     private bool _open;
+    private AudioSource _audioSource;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     public void Update()
@@ -19,5 +21,6 @@ public class Door : Interactable
 
         _open = !_open;
         _animator.SetBool("open", _open);
+        _audioSource.Play();
     }
 }

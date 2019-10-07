@@ -71,27 +71,34 @@ namespace UI
                     Player.Instance.GainAxe();
                     break;
                 case UpgradeType.WoodenHouse:
+                    Base.Instance.PlayBuildSound();
                     Base.Instance.SetLevel(BaseLevel.WoodenHouse);
                     break;
                 case UpgradeType.StoneHouse:
+                    Base.Instance.PlayBuildSound();
                     Base.Instance.SetLevel(BaseLevel.StoneHouse);
                     break;
                 case UpgradeType.Fence:
+                    Base.Instance.PlayBuildSound();
                     Base.Instance.EnableFence();
                     break;
                 case UpgradeType.Pickaxe:
                     Player.Instance.GainPickaxe();
                     break;
                 case UpgradeType.Gun:
+                    Base.Instance.PlayBuildSound();
                     Base.Instance.EnableGun1();
                     break;
                 case UpgradeType.Gun2:
+                    Base.Instance.PlayBuildSound();
                     Base.Instance.EnableGun2();
                     break;
                 case UpgradeType.Gun3:
+                    Base.Instance.PlayBuildSound();
                     Base.Instance.EnableGun3();
                     break;
                 case UpgradeType.Gun4:
+                    Base.Instance.PlayBuildSound();
                     Base.Instance.EnableGun4();
                     break;
                 default:

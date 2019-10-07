@@ -6,8 +6,10 @@ public class Base : MonoBehaviour
     public static Base Instance { private set; get; }
 
     public GameObject healthBar;
-    private int healthWood = 15;
-    private int healthStone = 40;
+    public AudioClip destroyClip;
+    public AudioClip buildClip;
+    public int healthWood = 15;
+    public int healthStone = 40;
 
     private BaseLevel _level = BaseLevel.None;
     private Transform _transform;
@@ -17,12 +19,14 @@ public class Base : MonoBehaviour
     private bool _gun2Enabled;
     private bool _gun3Enabled;
     private bool _gun4Enabled;
+    private AudioSource _audioSource;
 
     private void Awake()
     {
         Instance = this;
         _transform = transform;
         _health = GetComponent<Health>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     public void SetLevel(BaseLevel level)
@@ -202,6 +206,18 @@ public class Base : MonoBehaviour
         }
 
         RerenderBase();
+    }
+
+    public void PlayDestroySound()
+    {
+        _audioSource.clip = destroyClip;
+        _audioSource.Play();
+    }
+    
+    public void PlayBuildSound()
+    {
+        _audioSource.clip = buildClip;
+        _audioSource.Play();
     }
 }
 

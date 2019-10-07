@@ -22,7 +22,8 @@ public class Fence : MonoBehaviour
         {
             return;
         }
-        
+
+        Base.Instance.PlayDestroySound();
         gameObject.SetActive(false);
     }
 }

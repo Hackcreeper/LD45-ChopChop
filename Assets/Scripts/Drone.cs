@@ -10,6 +10,7 @@ public class Drone : Interactable
     public MeshRenderer meshRenderer;
     public Animator spearAnimator;
     public AudioClip hitSound;
+    public AudioSource hitSource;
 
     protected IDroneTarget[] Targets =
     {
@@ -108,6 +109,7 @@ public class Drone : Interactable
         }
 
         _attackTimer = 10f;
+        hitSource.Play();
         StartCoroutine(StartSpearAnimation());
     }
 
