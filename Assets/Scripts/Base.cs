@@ -96,6 +96,18 @@ public class Base : MonoBehaviour
     }
 
     public bool IsFenceEnabled() => _fenceEnabled;
+
+    public void Regenerate()
+    {
+        _health.HealFull();
+
+        if (_fenceEnabled)
+        {
+            Fence.Instance.GetComponent<Health>().HealFull();
+        }
+        
+        RerenderBase();
+    }
 }
 
 public enum BaseLevel
