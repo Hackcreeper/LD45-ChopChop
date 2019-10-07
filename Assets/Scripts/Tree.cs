@@ -63,6 +63,6 @@ public class Tree : Interactable
 
     public override bool IsActive()
     {
-        return base.IsActive() && Player.Instance.HasAxe();
+        return base.IsActive() && Toolbar.Instance.GetActiveTool() == Tool.Axe;
     }
 }

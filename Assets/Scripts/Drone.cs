@@ -167,7 +167,7 @@ public class Drone : Interactable
 
     public override bool IsActive()
     {
-        return base.IsActive() && Player.Instance.HasAxe();
+        return base.IsActive() && Toolbar.Instance.GetActiveTool() == Tool.Axe;
     }
 
     public Transform GetTarget() => _target.GetTransform();

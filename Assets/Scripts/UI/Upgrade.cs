@@ -61,6 +61,9 @@ namespace UI
                 case UpgradeType.Fence:
                     Base.Instance.EnableFence();
                     break;
+                case UpgradeType.Pickaxe:
+                    Player.Instance.GainPickaxe();
+                    break;
                 default:
                     Debug.LogError("Upgrade not implemented!");
                     break;
@@ -85,5 +88,6 @@ public enum UpgradeType
     WoodenHouse,
     StoneHouse,
     Fence,
-    Gun
+    Gun,
+    Pickaxe
 }

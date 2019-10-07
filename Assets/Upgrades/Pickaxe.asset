@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c4619d1ac20417bb5fa5b1ab2d766bd, type: 3}
-  m_Name: Wooden House
+  m_Name: Pickaxe
   m_EditorClassIdentifier: 
-  displayName: Wooden House
-  type: 1
-  unlocks:
-  - {fileID: 11400000, guid: 67c5ad8d19fe84e0d8a19d394024a86e, type: 2}
-  - {fileID: 11400000, guid: 17e7af2d67d534cf98774e7bc1780b48, type: 2}
+  displayName: Pickaxe
+  type: 5
+  unlocks: []
   costs:
   - type: 0
-    amount: 20
-  icon: {fileID: 21300000, guid: 1ade8554c84fa494ca1b33667254446d, type: 3}
+    amount: 5
+  - type: 3
+    amount: 10
+  icon: {fileID: 21300000, guid: 119aeb9b18ad3d540bf5a329c109d107, type: 3}

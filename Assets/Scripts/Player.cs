@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
@@ -7,6 +6,7 @@ public class Player : MonoBehaviour
     public static Player Instance { private set; get; }
     public float speed = 10.0f;
     public Axe axe;
+    public Pickaxe pickaxe;
     public BoxCollider fenceCollider;
     public BoxCollider houseCollider;
 
@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     private Transform _transform;
     private Health _health;
     private bool _hasAxe;
+    private bool _hasPickaxe;
 
     public LayerMask terrainLayer;
 
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             GainAxe();
+            GainPickaxe();
         }
 
         if (Input.GetKeyDown(KeyCode.O))
@@ -87,10 +89,18 @@ public class Player : MonoBehaviour
     }
 
     public bool HasAxe() => _hasAxe;
+    
+    public bool HasPickaxe() => _hasPickaxe;
 
     public void GainAxe()
     {
         _hasAxe = true;
-        axe.gameObject.SetActive(true);
+        Toolbar.Instance.SetActiveTool(Tool.Axe);
+    }
+    
+    public void GainPickaxe()
+    {
+        _hasPickaxe = true;
+        Toolbar.Instance.SetActiveTool(Tool.Pickaxe);
     }
 }
