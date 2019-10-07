@@ -23,6 +23,13 @@ public class Waves : MonoBehaviour
     public void Start()
     {
         _spawner = GameObject.FindGameObjectsWithTag("Spawner");
+        
+        for (var i = 0; i < _droneAmount; i++)
+        {
+            var spawner = SelectRandomSpawner();
+
+            _drones.Add(Instantiate(dronePrefab, spawner.transform.position, Quaternion.identity));
+        }
     }
     
     public void StartWave()
@@ -50,6 +57,13 @@ public class Waves : MonoBehaviour
         _drones.Clear();
     }
 
+    public List<GameObject> GetDrones() => _drones;
+
+    public void RemoveDrone(GameObject drone)
+    {
+        _drones.Remove(drone);
+    }
+    
     private GameObject SelectRandomSpawner()
     {
         return _spawner[Random.Range(0, _spawner.Length - 1)];

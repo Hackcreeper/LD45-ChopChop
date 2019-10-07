@@ -16,6 +16,7 @@ MonoBehaviour:
   type: 0
   unlocks:
   - {fileID: 11400000, guid: fb32db457f19949b99552129169c1556, type: 2}
+  - {fileID: 11400000, guid: 84b28e1ef7e3f4713b6b9f179b9d499b, type: 2}
   costs:
   - type: 0
     amount: 2

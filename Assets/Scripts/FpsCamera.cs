@@ -17,7 +17,7 @@ public class FpsCamera : MonoBehaviour
     private Transform _transform;
     private Player _playerInstance;
     private readonly List<Interactable> _interactables = new List<Interactable>();
-    private Quaternion ?_rotation = null;
+    private Quaternion ?_rotation;
     
     private void Start()
     {

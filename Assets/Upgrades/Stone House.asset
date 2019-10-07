@@ -18,4 +18,4 @@ MonoBehaviour:
   costs:
   - type: 1
     amount: 20
-  icon: {fileID: 21300000, guid: 119aeb9b18ad3d540bf5a329c109d107, type: 3}
+  icon: {fileID: 21300000, guid: 246dd1501daa5e1458cca4131eafa80d, type: 3}

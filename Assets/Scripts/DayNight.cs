@@ -7,7 +7,7 @@ public class DayNight : MonoBehaviour
     private float _speed = 1f;
     private float _rotation;
     private bool _isDay = true;
-    private int _nightsSurvived = 0;
+    private int _nightsSurvived;
     
     private void Awake()
     {
@@ -24,7 +24,6 @@ public class DayNight : MonoBehaviour
 
         if (_rotation >= 180 && _isDay)
         {
-            Debug.Log("Night started");
             StartNight();
             _isDay = false;
         } else if (_rotation <= 180 && !_isDay)
@@ -47,6 +46,9 @@ public class DayNight : MonoBehaviour
     {
         Waves.Instance.EndWave();
         _nightsSurvived++;
+        
+        Base.Instance.Regenerate();
+        Player.Instance.GetComponent<Health>().HealFull();
     }
 
     private void StartNight()

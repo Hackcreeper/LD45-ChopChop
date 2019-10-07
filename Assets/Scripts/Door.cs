@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
 
 public class Door : Interactable
 {
     private Animator _animator;
-    private bool _open = false;
+    private bool _open;
 
     private void Start()
     {

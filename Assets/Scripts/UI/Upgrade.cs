@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace UI
     {
         public UpgradeData data;
         public UpgradeWindow upgradeWindow;
-        
+
         // Analytics
         public UpgradeType type;
 
@@ -17,7 +18,7 @@ namespace UI
             {
                 type = data.type;
             }
-            
+
             if (!Focus || !Input.GetMouseButtonDown(0) || !IsActive())
             {
                 return;
@@ -25,6 +26,9 @@ namespace UI
 
             if (!CheckCosts())
             {
+                upgradeWindow.infoNotEnoughResources.SetActive(true);
+                StartCoroutine(HideNotEnoughResourcesInfo());
+                
                 return;
             }
 
@@ -32,6 +36,12 @@ namespace UI
             HandleUpgrade();
             RemoveOldUpgrade();
             UnlockNewUpgrades();
+        }
+
+        private IEnumerator HideNotEnoughResourcesInfo()
+        {
+            yield return new WaitForSeconds(2);
+            upgradeWindow.infoNotEnoughResources.SetActive(false);
         }
 
         private void UnlockNewUpgrades()
@@ -61,6 +71,21 @@ namespace UI
                 case UpgradeType.Fence:
                     Base.Instance.EnableFence();
                     break;
+                case UpgradeType.Pickaxe:
+                    Player.Instance.GainPickaxe();
+                    break;
+                case UpgradeType.Gun:
+                    Base.Instance.EnableGun1();
+                    break;
+                case UpgradeType.Gun2:
+                    Base.Instance.EnableGun2();
+                    break;
+                case UpgradeType.Gun3:
+                    Base.Instance.EnableGun3();
+                    break;
+                case UpgradeType.Gun4:
+                    Base.Instance.EnableGun4();
+                    break;
                 default:
                     Debug.LogError("Upgrade not implemented!");
                     break;
@@ -85,5 +110,9 @@ public enum UpgradeType
     WoodenHouse,
     StoneHouse,
     Fence,
-    Gun
+    Gun,
+    Pickaxe,
+    Gun2,
+    Gun3,
+    Gun4
 }

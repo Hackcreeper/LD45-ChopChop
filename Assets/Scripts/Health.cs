@@ -17,4 +17,9 @@ public class Health : MonoBehaviour
     }
 
     public int Get() => _amount;
+
+    public void HealFull()
+    {
+        _amount = maxHealth;
+    }
 }

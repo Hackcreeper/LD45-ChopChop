@@ -10,7 +10,10 @@ namespace UI
         public List<UpgradeData> upgrades;
         public RectTransform upgradeContainer;
         public GameObject upgradePrefab;
-
+        public GameObject infoNoUpgrades;
+        public GameObject infoOnlyOnDay;
+        public GameObject infoNotEnoughResources;
+        
         private RectTransform _rectTransform;
 
         private void Start()
@@ -21,6 +24,20 @@ namespace UI
 
         private void Update()
         {
+            if (upgrades.Count == 0)
+            {
+                infoNoUpgrades.SetActive(true);
+                infoOnlyOnDay.SetActive(false);
+            }
+
+            if (!DayNight.Instance.IsDay())
+            {
+                infoNoUpgrades.SetActive(false);
+                infoOnlyOnDay.SetActive(true);
+            }
+            
+            upgradeContainer.gameObject.SetActive(DayNight.Instance.IsDay());
+
             var targetHeight = Vector3.Distance(transform.position, Player.Instance.transform.position) > 25
                 ? 0
                 : maxHeight;
