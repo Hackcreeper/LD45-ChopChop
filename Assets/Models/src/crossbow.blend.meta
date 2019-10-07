@@ -2,7 +2,10 @@ fileFormatVersion: 2
 guid: 06f6b05f19cd1cb4d973b271dff6c865
 ModelImporter:
   serializedVersion: 26
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -2363978504541659335
+    second: Spear and Rope|Spear and RopeAction
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -30,7 +33,36 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Spear and Rope|Spear and RopeAction
+      takeName: Spear and Rope|Spear and RopeAction
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -73,7 +105,52 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: crossbow(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Stand
+      parentName: crossbow(Clone)
+      position: {x: 5, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.2, y: 1.8000001, z: 1}
+    - name: Mounts
+      parentName: crossbow(Clone)
+      position: {x: 5, y: 1, z: 0}
+      rotation: {x: -0.50000006, y: -0.4999999, z: -0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 0.5}
+    - name: Crossbow
+      parentName: Mounts
+      position: {x: 0.00000029934387, y: -6.8481894, z: 1.6139014}
+      rotation: {x: -0.06724418, y: -0.000000007564928, z: -3.2297565e-10, w: 0.9977366}
+      scale: {x: 1, y: 1.0175287, z: 0.99556965}
+    - name: Spear and Rope
+      parentName: Mounts
+      position: {x: -0.0021136405, y: 17.731123, z: 3.368638}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071067}
+      scale: {x: 2, y: 2, z: 4}
+    - name: Bone
+      parentName: Spear and Rope
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_end
+      parentName: Bone
+      position: {x: -0, y: 1, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spear
+      parentName: crossbow(Clone)
+      position: {x: -7.853754, y: 6.597433, z: -0.00671475}
+      rotation: {x: -0.5264441, y: -0.47207695, z: 0.47207695, w: 0.5264441}
+      scale: {x: 0.7199999, y: 0.71999997, z: 0.7199999}
+    - name: Rope
+      parentName: crossbow(Clone)
+      position: {x: -1.8481884, y: 1.8069507, z: 0}
+      rotation: {x: 0.5264441, y: 0.47207692, z: 0.526444, w: -0.472077}
+      scale: {x: 1, y: 1, z: 0.5}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -84,10 +161,10 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 1
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
