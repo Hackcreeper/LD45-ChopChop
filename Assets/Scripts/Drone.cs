@@ -15,6 +15,9 @@ public class Drone : Interactable
         new PlayerTarget(),
         new FenceTarget(), 
         new Gun1Target(),
+        new Gun2Target(),
+        new Gun3Target(),
+        new Gun4Target(),
         new BaseTarget()
     };
 

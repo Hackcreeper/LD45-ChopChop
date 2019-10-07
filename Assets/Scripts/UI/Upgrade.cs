@@ -7,7 +7,7 @@ namespace UI
     {
         public UpgradeData data;
         public UpgradeWindow upgradeWindow;
-        
+
         // Analytics
         public UpgradeType type;
 
@@ -17,7 +17,7 @@ namespace UI
             {
                 type = data.type;
             }
-            
+
             if (!Focus || !Input.GetMouseButtonDown(0) || !IsActive())
             {
                 return;
@@ -67,6 +67,15 @@ namespace UI
                 case UpgradeType.Gun:
                     Base.Instance.EnableGun1();
                     break;
+                case UpgradeType.Gun2:
+                    Base.Instance.EnableGun2();
+                    break;
+                case UpgradeType.Gun3:
+                    Base.Instance.EnableGun3();
+                    break;
+                case UpgradeType.Gun4:
+                    Base.Instance.EnableGun4();
+                    break;
                 default:
                     Debug.LogError("Upgrade not implemented!");
                     break;
@@ -92,5 +101,8 @@ public enum UpgradeType
     StoneHouse,
     Fence,
     Gun,
-    Pickaxe
+    Pickaxe,
+    Gun2,
+    Gun3,
+    Gun4
 }

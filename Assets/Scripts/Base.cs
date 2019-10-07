@@ -6,13 +6,16 @@ public class Base : MonoBehaviour
     public static Base Instance { private set; get; }
 
     public GameObject healthBar;
-    
+
     private BaseLevel _level = BaseLevel.None;
     private Transform _transform;
     private Health _health;
     private bool _fenceEnabled;
     private bool _gun1Enabled;
-    
+    private bool _gun2Enabled;
+    private bool _gun3Enabled;
+    private bool _gun4Enabled;
+
     private void Awake()
     {
         Instance = this;
@@ -81,6 +84,21 @@ public class Base : MonoBehaviour
         {
             _transform.Find("Gun1").gameObject.SetActive(true);
         }
+
+        if (_gun2Enabled)
+        {
+            _transform.Find("Gun2").gameObject.SetActive(true);
+        }
+
+        if (_gun3Enabled)
+        {
+            _transform.Find("Gun3").gameObject.SetActive(true);
+        }
+
+        if (_gun4Enabled)
+        {
+            _transform.Find("Gun4").gameObject.SetActive(true);
+        }
     }
 
     private void Update()
@@ -89,7 +107,7 @@ public class Base : MonoBehaviour
         {
             return;
         }
-        
+
         ScoreTransmitter.Instance.SetScore(DayNight.Instance.GetNightsSurvived());
         ScoreTransmitter.Instance.SetReason(GameOverReason.BaseDestroyed);
         SceneManager.LoadScene("GameOver");
@@ -110,7 +128,31 @@ public class Base : MonoBehaviour
     }
 
     public bool IsGun1Enabled() => _gun1Enabled;
-    
+
+    public void EnableGun2()
+    {
+        _gun2Enabled = true;
+        RerenderBase();
+    }
+
+    public bool IsGun2Enabled() => _gun2Enabled;
+
+    public void EnableGun3()
+    {
+        _gun3Enabled = true;
+        RerenderBase();
+    }
+
+    public bool IsGun3Enabled() => _gun3Enabled;
+
+    public void EnableGun4()
+    {
+        _gun4Enabled = true;
+        RerenderBase();
+    }
+
+    public bool IsGun4Enabled() => _gun4Enabled;
+
     public void Regenerate()
     {
         _health.HealFull();
@@ -119,12 +161,27 @@ public class Base : MonoBehaviour
         {
             Fence.Instance.GetComponent<Health>().HealFull();
         }
-        
+
         if (_gun1Enabled)
         {
             _transform.Find("Gun1").GetComponent<Health>().HealFull();
         }
-        
+
+        if (_gun2Enabled)
+        {
+            _transform.Find("Gun2").GetComponent<Health>().HealFull();
+        }
+
+        if (_gun3Enabled)
+        {
+            _transform.Find("Gun3").GetComponent<Health>().HealFull();
+        }
+
+        if (_gun4Enabled)
+        {
+            _transform.Find("Gun4").GetComponent<Health>().HealFull();
+        }
+
         RerenderBase();
     }
 }
@@ -133,6 +190,5 @@ public enum BaseLevel
 {
     None,
     WoodenHouse,
-    StoneHouse,
-    Tower
+    StoneHouse
 }
