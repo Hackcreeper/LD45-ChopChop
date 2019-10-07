@@ -129,8 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1336021}
-  - component: {fileID: 1336022}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: WoodenHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,19 +151,6 @@ Transform:
   m_Father: {fileID: 1521017346}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1336022
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1336020}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 7.5, y: 1, z: 11}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &6127229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3641,7 +3627,7 @@ MonoBehaviour:
   axe: {fileID: 751771571}
   pickaxe: {fileID: 1111378274}
   fenceCollider: {fileID: 1002655525}
-  houseCollider: {fileID: 1336022}
+  houseCollider: {fileID: 1521017348}
   terrainLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -9523,7 +9509,8 @@ GameObject:
   - component: {fileID: 1521017346}
   - component: {fileID: 1521017345}
   - component: {fileID: 1521017347}
-  m_Layer: 0
+  - component: {fileID: 1521017348}
+  m_Layer: 12
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9577,6 +9564,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+--- !u!65 &1521017348
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521017344}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.5, y: 1, z: 11}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1521095687
 GameObject:
   m_ObjectHideFlags: 0

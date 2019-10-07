@@ -10,6 +10,7 @@ namespace DroneTargets
             var gunPosition = gun4.position;
 
             return Vector4.Distance(gunPosition, drone.transform.position) < 40f
+                   && Base.Instance.IsGun4Enabled()
                    && gun4.GetComponent<Health>().Get() > 0
                    && !InFence(gunPosition);
         }
