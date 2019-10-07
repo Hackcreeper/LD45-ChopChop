@@ -19,6 +19,11 @@ public class DayNight : MonoBehaviour
 
     private void Update()
     {
+        if (Pause.Instance.IsPaused())
+        {
+            return;
+        }
+        
         skipText.SetActive(_isDay && _active);
         
         if (_isDay && _active && Input.GetKeyDown(KeyCode.T))

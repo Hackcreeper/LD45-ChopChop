@@ -17,8 +17,8 @@ public class FpsCamera : MonoBehaviour
     private Transform _transform;
     private Player _playerInstance;
     private readonly List<Interactable> _interactables = new List<Interactable>();
-    private Quaternion ?_rotation;
-    
+    private Quaternion? _rotation;
+
     private void Start()
     {
         _transform = GetComponent<Transform>();
@@ -27,7 +27,7 @@ public class FpsCamera : MonoBehaviour
 
     private void Update()
     {
-        if (_playerInstance.axe.IsActive())
+        if (_playerInstance.axe.IsActive() || Pause.Instance.IsPaused())
         {
             if (!_rotation.HasValue)
             {
@@ -35,12 +35,12 @@ public class FpsCamera : MonoBehaviour
             }
 
             _transform.rotation = _rotation.Value;
-            
+
             return;
         }
 
         _rotation = null;
-        
+
         HandleMovement();
         HandleCursor();
     }
@@ -49,7 +49,7 @@ public class FpsCamera : MonoBehaviour
     {
         _interactables.ForEach(interactable => interactable.SetFocus(false));
         _interactables.Clear();
-        
+
         var ray = new Ray(_transform.position, _transform.forward);
         var hits = Physics.RaycastAll(ray, 100);
 
@@ -63,15 +63,15 @@ public class FpsCamera : MonoBehaviour
                 {
                     continue;
                 }
-                
+
                 _interactables.Add(interactable);
             }
-            
+
             _interactables.ForEach(interactable => interactable.SetFocus(true));
-            
+
             return;
         }
-        
+
         Crosshair.Instance.SetState(CursorState.Normal);
     }
 

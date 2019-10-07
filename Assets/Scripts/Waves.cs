@@ -11,7 +11,7 @@ public class Waves : MonoBehaviour
     
     private float waveMultiplicator = 1.4f;
     
-    private int _droneAmount = 1; // 4;
+    private int _droneAmount = 4;
     private bool _waveRunning;
 
     private GameObject[] _spawner;

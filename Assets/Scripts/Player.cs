@@ -74,12 +74,6 @@ public class Player : MonoBehaviour
         var vertical = Input.GetAxis("Vertical") * speed;
         var horizontal = Input.GetAxis("Horizontal") * speed;
         _rigidbody.velocity = transform.rotation * new Vector3(horizontal, velocity, vertical);
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            // TODO: Move to pause script when pause menu is added
-            Cursor.lockState = CursorLockMode.None;
-        }
     }
 
     private bool IsGrounded()
