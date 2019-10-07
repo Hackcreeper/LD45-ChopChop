@@ -6,7 +6,7 @@ public class Tree : Interactable
 
     private int _health = 3;
 
-    private bool _cutting = false;
+    private bool _cutting;
     private bool _wasActive = true;
     
     private void Update()
