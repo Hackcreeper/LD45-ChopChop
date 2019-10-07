@@ -51,7 +51,7 @@ public class Toolbar : MonoBehaviour
             return;
         }
 
-        _scrollTimer = .5f;
+        _scrollTimer = .25f;
         _activeTool = _activeTool == Tool.Axe ? Tool.Pickaxe : Tool.Axe;
         SwitchTool();
     }
