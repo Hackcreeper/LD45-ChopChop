@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c4619d1ac20417bb5fa5b1ab2d766bd, type: 3}
   m_Name: Gun4
   m_EditorClassIdentifier: 
-  displayName: Fourth gun
+  displayName: Fourth Ballista
   type: 8
   unlocks: []
   costs:

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c4619d1ac20417bb5fa5b1ab2d766bd, type: 3}
   m_Name: Gun2
   m_EditorClassIdentifier: 
-  displayName: Second gun
+  displayName: Second Ballista
   type: 6
   unlocks:
   - {fileID: 11400000, guid: 800ca77f5a6e5457b85d0034cc3e855e, type: 2}
