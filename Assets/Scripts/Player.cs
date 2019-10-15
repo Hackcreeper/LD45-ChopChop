@@ -32,7 +32,9 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene("Level", LoadSceneMode.Additive);
         }
 
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        
         _rigidbody = GetComponent<Rigidbody>();
         _transform = GetComponent<Transform>();
         _health = GetComponent<Health>();
