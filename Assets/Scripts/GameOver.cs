@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -22,6 +24,16 @@ public class GameOver : MonoBehaviour
         reasonText.text = reason == GameOverReason.PlayerDied
             ? "You died!"
             : "Your base was destroyed!";
+        
+        Analytics.CustomEvent("game_over", new Dictionary<string, object>
+        {
+            {
+                "score", score
+            },
+            {
+                "reason", reason
+            }
+        });
     }
 
     private void Update()
